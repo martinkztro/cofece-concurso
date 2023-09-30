@@ -17,12 +17,12 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<header class="bg-white">
+		<header class="bg-white shadow-black shadow-xl">
 			<img src="public/cofece-logos.png" alt="">
 		
-			<div class="flex px-4 justify-between items-center bg-cyan-300 py-1">
+			<div class="flex px-3 justify-between items-center bg-cyan-500 py-1">
 				<img class="w-6 h-6" src="public/filter.png" alt="">
-				<div class="flex justify-center gap-4 py-2">
+				<div class="flex justify-center gap-3 py-2">
 					<input class="rounded-xl px-3 py-1" type="search" placeholder="Ingrese su búsqueda" name="search">
 					<button class="bg-yellow-400 px-7 rounded-2xl shadow-md" type="submit">
 						<img class="w-6 h-6" src="public/search.png" alt="">
@@ -33,7 +33,7 @@ const { title } = Astro.props;
 
 		<slot/>
 
-		<nav class="bg-cyan-300 fixed bottom-0 w-full">
+		<nav class="bg-cyan-500 fixed bottom-0 w-full shadow-black shadow-xl">
 			<ul class="flex justify-between items-center py-1 px-2">
 				<li class="flex flex-col justify-center items-center">
 					<img src="public/news.png" alt="Logo" class="h-6">
