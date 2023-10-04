@@ -1,51 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PostNoticia from '../components/PostNoticia.astro';
 
 ---
 
 <Layout title="Cofece - Comisión Federal de Competencia Económica">
-	<main class="flex h-screen flex-col justify-between mt-32       bg-white">
-
-		<section class="flex flex-col justify-center items-center h-full">
-			<h2 class="text-2xl font-bold text-center">¿Qué es Cofece?</h2>
-			<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-		</section>
-
-		<section class="flex flex-col justify-center items-center h-full">
-			<h2 class="text-2xl font-bold text-center">¿Qué hace Cofece?</h2>
-			<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-		</section>
-
-		<section class="flex flex-col justify-center items-center h-full">
-			<h2 class="text-2xl font-bold text-center">¿Cómo funciona Cofece?</h2>
-			<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-		</section>
-
-		<section class="flex flex-col justify-center items-center h-full">
-			<h2 class="text-2xl font-bold text-center">¿Cómo se relaciona Cofece con la ciudadanía?</h2>
-			<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-		</section>
-
-		<section class="flex flex-col justify-center items-center h-full">
-			<h2 class="text-2xl font-bold text-center">¿Cómo se relaciona Cofece con el gobierno?</h2>
-			<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-		</section>
-		
-		<section class="flex flex-col justify-center items-center h-full">
-			<h2 class="text-2xl font-bold text-center">¿Cómo se relaciona Cofece con la ciudadanía?</h2>
-			<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-		</section>
-
-		<section class="flex flex-col justify-center items-center h-full">
-			<h2 class="text-2xl font-bold text-center">¿Cómo se relaciona Cofece con el gobierno?</h2>
-			<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-		</section>
-
-		<section class="flex flex-col justify-center items-center mb-20 h-full">
-			<h2 class="text-2xl font-bold text-center">¿Cómo se relaciona Cofece con las empresas?</h2>
-			<p class="text-center">Lorem</p>
-		</section>
-
+	<main class="grid mt-32 gap-6 mb-24 bg-white mx-4">
+		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
+		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
+		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
+		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
 
 	</main>
 </Layout>
