@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PostNoticia from '../components/PostNoticia.astro';
 
 ---
 
 <Layout title="Cofece - Comisión Federal de Competencia Económica">
-	<main class="flex h-screen flex-col justify-between bg-white">
+	<main class="grid mt-32 gap-6 mb-24 bg-white mx-4">
+		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
+		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
+		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
+		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
 
 	</main>
 </Layout>
