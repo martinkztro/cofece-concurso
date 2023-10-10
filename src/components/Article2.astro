@@ -2,7 +2,7 @@
 // This component receives an array of articles
 interface Props {
     year?: number;
-    articles?: Array<{ year: number; title: string; person: string; date: string, link: string }>;
+    articles?: Array<{ year: number; title: string; person: string; date: string, link: string, pdf: string }>;
 }
 
 const { year, articles } = Astro.props;
@@ -16,7 +16,7 @@ const { year, articles } = Astro.props;
         {articles.filter(article => article.year === year).map((article, index) => (
             <div>
                 <p class="article-title"><a href={article.link}>{article.title}</a></p>
-                <p><span class="article-person">{article.person}.</span> <span> Fecha: {article.date}.</span></p>
+                <p><span class="article-person">{article.person}.</span> <span> Fecha: {article.date}.</span> <span class="textRight linkFormat"><a href={article.pdf} target="_blank" rel="noopener noreferrer">Descargar PDF</a></span></p>
                 <hr style="width: 70%; margin-left: 15%;">
             </div>
         ))}    

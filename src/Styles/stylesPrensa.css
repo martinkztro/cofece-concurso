@@ -78,5 +78,23 @@
 
 .hidden {
     display: none;
-  }
-  
+}
+
+
+.textRight {
+    width: 70%;
+    margin-left: 15%;
+    text-align: left;
+    margin-top: 0%;
+    font-weight: bold;
+}
+
+.linkFormat {
+    color: rgb(1, 87, 155);
+    text-decoration: underline; 
+}
+
+.linkFormat:hover {
+    color:  rgb(0, 172, 193);
+}
+
