@@ -6,6 +6,8 @@ import Article2 from '../components/Article2.astro';
 
 const brenda = "Comisionada Presidenta en suplencia por vacancia, Brenda Gisela Hernández Ramírez";
 const juan = "Director General de Estudios Económicos, Juan Manuel Espino Bravo";
+const alejandra = "Comisionada Presidenta, Alejandra Palacios Prieto";
+const dh = "Comisión Nacional de Derechos Humanos";
 
 const articlesData = [
     {
@@ -14,7 +16,7 @@ const articlesData = [
         person: brenda,
         date: "26 octubre 2022",
         link: "/discursos/discursoTailwind",
-        pdf: "src/pages/discursos/pdf/discurso-26-oct-2022.pdf"
+        pdf: "src/pages/publicaciones/pdf/discurso-26-octubre-2022.pdf"
     },
     {
         year: 2022,
@@ -22,7 +24,7 @@ const articlesData = [
         person: brenda,
         date: "26 mayo 2022",
         link: "",
-        pdf: ""
+        pdf: "src/pages/publicaciones/pdf/discurso-26-mayo-2022.pdf"
     },
     {
         year: 2022,
@@ -30,7 +32,7 @@ const articlesData = [
         person: juan,
         date: "06 diciembre 2022",
         link: "",
-        pdf: ""
+        pdf: "src/pages/publicaciones/pdf/presentacion-06-diciembre-2022.pdf"
     },
     {
         year: 2022,
@@ -38,15 +40,87 @@ const articlesData = [
         person: brenda,
         date: "26 mayo 2022",
         link: "",
-        pdf: ""
+        pdf: "src/pages/publicaciones/pdf/presentacion-26-mayo-2022.pdf"
     },
     {
         year: 2021,
         title: 'Presentación ante la Comisión de Hacienda y Crédito Público del Senado de la República de la comisionada presidenta Alejandra Palacios Prieto',
-        person: brenda,
-        date: "26 mayo 2022",
+        person: alejandra,
+        date: "19 febrero 2021",
         link: "",
-        pdf: ""
+        pdf: "src/pages/publicaciones/pdf/presentacion-19-febrero-2021.pdf"
+    },
+    {
+        year: 2020,
+        title: 'Presentación "Propuestas en materia de competencia económica para contribuir a la reactivación de la economía mexicana", COFECE',
+        person: alejandra,
+        date: "13 octubre 2020",
+        link: "",
+        pdf: "src/pages/publicaciones/pdf/presentacion-13-octubre-2020.pdf"
+    },
+    {
+        year: 2020,
+        title: 'Presentación "Competencia Económica en tiempos de Covid-19", ANADE',
+        person: alejandra,
+        date: "15 abril 2020",
+        link: "",
+        pdf: "src/pages/publicaciones/pdf/presentacion-15-abril-2020.pdf"
+    },
+    {
+        year: 2019,
+        title: 'Presentación "Obstáculos regulatorios en el servicio de autotransporte de carga", Segunda Sesión Ordinaria del Consejo Nacional de Mejora Regulatoria',
+        person: alejandra,
+        date: "28 noviembre 2019",
+        link: "",
+        pdf: "src/pages/publicaciones/pdf/presentacion-28-noviembre-2019.pdf"
+    },
+    {
+        year: 2019,
+        title: 'Presentación "Para eliminar obstáculos a la competencia en la regulación estatal en los mercados de gasolinas y gas L.P.", CONAMER',
+        person: alejandra,
+        date: "19 agosto 2019",
+        link: "",
+        pdf: "src/pages/publicaciones/pdf/presentacion-19-agosto-2019.pdf"
+    },
+    {
+        year: 2019,
+        title: 'Reunión de trabajo-Comisión de Radio y Televisión y la Comisión de Economía Comercio y Competitividad, Cámara de Diputados',
+        person: alejandra,
+        date: "29 mayo 2019",
+        link: "",
+        pdf: "src/pages/publicaciones/pdf/presentacion-29-mayo-2019.pdf"
+    },
+    {
+        year: 2019,
+        title: 'Presentación "Aspectos Generales de Derechos Humanos"',
+        person: dh,
+        date: "27 mayo 2019",
+        link: "",
+        pdf: "src/pages/publicaciones/pdf/presentacion-27-mayo-2019.pdf"
+    },
+    {
+        year: 2019,
+        title: 'Estudio de competencia en el autotransporte federal de pasajeros: Hallazgos y recomendaciones',
+        person: alejandra,
+        date: "10 abril 2019",
+        link: "",
+        pdf: "src/pages/publicaciones/pdf/presentacion-10-abril-2019.pdf"
+    },
+    {
+        year: 2019,
+        title: 'Informe de actividades ante la Comisión de Economía, Senado de la República',
+        person: alejandra,
+        date: "21 febrero 2019",
+        link: "",
+        pdf: "src/pages/publicaciones/pdf/presentacion-21-febrero-2019.pdf"
+    },
+    {
+        year: 2019,
+        title: 'Cómo asegurar mercados competitivos de gasolinas y diésel en México',
+        person: alejandra,
+        date: "30 enero 2019",
+        link: "",
+        pdf: "src/pages/publicaciones/pdf/presentacion-30 enero-2019.pdf"
     },
   ]
 ---
@@ -59,6 +133,8 @@ const articlesData = [
     <Article2 year={2023} articles={articlesData.filter(article => article.year === 2023)} />
     <Article2 year={2022} articles={articlesData.filter(article => article.year === 2022)} />
     <Article2 year={2021} articles={articlesData.filter(article => article.year === 2021)} />
+    <Article2 year={2020} articles={articlesData.filter(article => article.year === 2020)} />
+    <Article2 year={2019} articles={articlesData.filter(article => article.year === 2019)} />
       </div>
   </astro-fragment>
   </Layout>
