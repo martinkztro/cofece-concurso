@@ -66,9 +66,36 @@
     color: #30dd8a; 
 }
 
+/*column test*/
+.article-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin-left: 15%;
+}
+
 .article-person{
+/*column test flex 1 for column*/
     text-align: left;
+    margin-right: 10px;
+    white-space: nowrap; 
    /*margin-right: */
+}
+
+.divtest {
+    justify-content: right;
+}
+.article-date {
+/*column test flex 1 for column*/
+    text-align: right;
+    
+}
+
+
+.article-pdf {
+/*column test flex 1 for column*/
+    text-align: left; 
 }
 
 .article-link {
