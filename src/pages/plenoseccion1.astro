@@ -35,32 +35,54 @@ import Card from '../components/Card.astro';
 	    <img class="perfil" src="public/perfil.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Andrea Marvan Saltiel</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionada presidenta</h3>
-		
+		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
+		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
+		<button class="more" style="color: black;">Ver mas</button>
+		<hr>
 
 
         <img class="perfil" src="public/perfil.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Alejandro Faya Rodriguez</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionado</h3>
+		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
+		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
+		<button class="more" style="color: black;">Ver mas</button>
+		<hr>
 
         <img class="perfil" src="public/perfil.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Ana María Reséndiz Mora</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionada</h3>
-
+		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
+		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
+		<button class="more" style="color: black;">Ver mas</button>
+		<hr>
         <img class="perfil" src="public/perfil.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Brenda  Gisela  Hernández Ramírez</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionada</h3>
-
+		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
+		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
+		<button class="more" style="color: black;">Ver mas</button>
+		<hr>
         <img class="perfil" src="public/perfil.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Giovanni Tapia Lezama</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionado</h3>
-
+		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
+		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
+		<button class="more" style="color: black;">Ver mas</button>
+		<hr>
         <img class="perfil" src="public/perfil.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">José Eduardo Mendoza Contreras</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionado</h3>
-
+		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
+		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
+		<button class="more" style="color: black;">Ver mas</button>
+		<hr>
         <img class="perfil" src="public/perfil.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Rodrigo Alcázar Silva</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionado</h3>
+		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
+		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
+		<button class="more" style="color: black;">Ver mas</button>
 
 	
     </main>
@@ -76,6 +98,19 @@ import Card from '../components/Card.astro';
 		font-size: 20px;
 		background-color: rgb(255, 255, 255);
 		line-height: 1.6;
+	}
+
+	.more {
+		margin: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: .3s;
+		border-radius: 8%;
+	}
+
+	.more:hover{
+		background-color:#00a099;
 	}
 
 	
@@ -95,6 +130,13 @@ import Card from '../components/Card.astro';
 	}
     .perfil{
         margin: auto;
+    }
+
+	hr{
+        background-color:#00a099;
+        height: 0.1em;
+        border-radius:1.5rem;
+        clear: both;
     }
 
     .context{
