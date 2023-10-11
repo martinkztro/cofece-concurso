@@ -3,20 +3,13 @@ import '../../Styles/stylesDiscurso.css'
 import Layout from '../../layouts/Layout.astro';
 ---
 
+<Layout title="Cofece - Discurso">
     <astro-fragment>
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Jornada por la Competencia 2022</title>
-        </head>
 
-        <body>
-                <div class="grid-container">
+                <div class="grid-container" style="margin-top: 5%; margin-bottom: 5%;">
                 <div class="containerDoc main">
-                <h2 class="colorNavy">Jornada por la Competencia 2022</h2>
-                <h2 class="colorNavy">Sector financiero en México: retos y oportunidades</h2>
+                <h2 class="text-xl font-semibold colorNavy">Jornada por la Competencia 2022</h2>
+                <h2 class="text-xl font-semibold colorNavy">Sector financiero en México: retos y oportunidades</h2>
                 <p>Miércoles 26 de octubre de 2022.</p>
                 
                 <p>9:30 a 9:45 hrs. Mensaje de bienvenida de la Comisionada Presidenta</p>
@@ -30,13 +23,12 @@ import Layout from '../../layouts/Layout.astro';
                     <li>Muy buenos días, me da mucho gusto saludar esta mañana a todos quienes nos acompañan en este importante evento para la Comisión Federal de Competencia Económica, que afortunadamente, podemos retomar en formato híbrido tras más de dos difíciles años de pandemia.</li>
                 <li>Saludo con mucho gusto a los panelistas con los que tenemos el honor de contar hoy, distinguidos miembros de la academia, servidores y exservidores públicos, representantes del sector privado, así como miembros de organismos internacionales y a las agencias de competencia que nos siguen desde otros países.</li>
                 <li>Y por supuesto saludo y agradezco la presencia de Frederic Jenny, Presidente del Comité de Competencia de la Organización para la Cooperación y el Desarrollo Económico (OCDE), así como de todo el público que nos acompaña tanto presencialmente como a través de las redes de la COFECE.</li>
-            </ul></p>
-                
-                <h3 class="colorBlue">Importancia de la política de competencia.</h3>
+            </ul></p>       
+                <h3 class="text-lg font-semibold colorBlue" style="margin-top: 30px;">Importancia de la política de competencia.</h3>
                 <p>Quiero iniciar esta mañana reiterando algo que desde la COFECE tenemos muy claro: que la competencia económica conlleva enormes beneficios como menores precios, más y mejores bienes y servicios, mayores alternativas de compra para los consumidores y, en general, eficiencia en los mercados que en última instancia conlleva un mayor desarrollo económico.</p>
                 <p>A su vez, los costos de la falta de competencia también son evidentes: precios más altos, menor calidad, poca variedad, falta de innovación, privilegios para unos pocos y mercados pequeños e ineficientes.</p>
                 <p>En este sentido, podemos aseverar que la competencia económica es una <b>poderosa herramienta</b> para mejorar las condiciones de vida de las familias mexicanas, especialmente aquellas con las condiciones económicas menos favorables.</p>
-                <h3 class="colorBlue">Entorno global.</h3>
+                <h3 class="text-lg font-semibold colorBlue">Entorno global.</h3>
                 <p>En la COFECE somos conscientes de las complejas condiciones económicopolíticas que se observan actualmente, no sólo en nuestro país, sino en gran
                     parte del mundo:</p>
                 <p>El entorno global actual se caracteriza por elementos de volatilidad,
@@ -56,7 +48,7 @@ import Layout from '../../layouts/Layout.astro';
                     desempleo, redujo los ingresos de los hogares y, consecuentemente, provocó
                     una caída en el consumo. A causa de todo lo anterior, se estima que, a
                     mediados de 2020, el Producto Interno Bruto (PIB) mundial se contrajo en 10%
-                    respecto de su nivel a finales de 2019.<sup>1</sup></p>
+                    respecto de su nivel a finales de 2019.<a href="#supBottom1"><sup id="supTop1">1</sup></a></p>
                 <p>En este contexto, la implementación de una política de competencia efectiva
                     cobra mayor relevancia, pues favorece la presencia de agentes económicos,
                     nuevos o previamente establecidos, cuya capacidad para entrar y permanecer
@@ -75,7 +67,7 @@ import Layout from '../../layouts/Layout.astro';
                     imperante impulsar una política de competencia que permita a las empresas
                     contar con mejores condiciones de acceso a insumos, capital, tecnología e
                     infraestructura.</p>
-                <h3 class="colorBlue">JxC y sector financiero.</h3>
+                <h3 class="text-lg font-semibold colorBlue">JxC y sector financiero.</h3>
                 <p>Como ustedes saben, la Comisión guía su actuar con un Plan Estratégico que
                     incorpora una priorización de sectores con la cual se busca un mayor impacto
                     de las intervenciones de la COFECE en términos de eficiencia sobre el
@@ -92,17 +84,18 @@ import Layout from '../../layouts/Layout.astro';
                     económico y social de cualquier nación: Por un lado, se observa que países con
                     sistemas y mercados financieros eficientes crecen más rápido y por otro, las
                     economías con mayores niveles de crecimiento y bienestar impulsan sistemas
-                    financieros más sólidos y profundos<sup>2</sup></p>
+                    financieros más sólidos y profundos<a href="#supBottom2"><sup id="supTop2">2</sup></a></p>
                 <p>En nuestro país, la relevancia de este sector es evidente:</p>
-                <p><ul>
+                <p><ul class="list-disc ml-10">
                     <li>En 2020, aportó el 5% del PIB y, de 2016 a 2020, creció 7.23%.</li>
                     <li>En especial, el subsector de fianzas, seguros y pensiones registró un
                         crecimiento en el mismo periodo de casi 50%, lo que representa una
                         tasa promedio anual de más de 10%. </li>
                     <li>En 2018, el 31% de la población de 18 a 70 años tuvo al menos un crédito
-                        formal<sup>3</sup></li>
+                        formal<a href="#supBottom3"><sup id="supTop3">3</sup></a></li>
                     <li>Asimismo, en 2020, el 27% de los hogares reportó depósitos en cuentas
-                        y cajas de ahorro, y el 85.6% reportó pagos de tarjetas de crédito.<sup>4</sup></li>
+                        y cajas de ahorro, y el 85.6% reportó pagos de tarjetas de crédito.
+                        <a href="#supBottom4"><sup id="supTop4">4</sup></a></li>
                 </ul></p>
                 <p>El sistema financiero mexicano tiene algunas ventajas respecto a otros
                     sistemas en el mundo: las instituciones financieras privadas del país cuentan
@@ -118,7 +111,7 @@ import Layout from '../../layouts/Layout.astro';
                     la COFECE ha realizado diversas intervenciones para promover mayor
                     eficiencia en los mercados financieros:
                     </p>
-                <p><ul>
+                <p><ul class="list-disc ml-10">
                     <li>En 2014 publicamos un trabajo de investigación sobre las condiciones
                         de competencia en el sector financiero, en el que se analizan y emiten
                         recomendaciones en algunos de los mercados más relevantes como
@@ -182,7 +175,7 @@ import Layout from '../../layouts/Layout.astro';
                     servicios.</p>
                 <p>En particular, en lo referente al mercado de seguros de gastos médicos, el
                     estudio presenta recomendaciones enfocadas en 4 aspectos:</p>
-                <p><ol>
+                <p><ol class="list-decimal ml-8">
                     <li>Fomentar la transparencia en el mercado relacionado de servicios
                         hospitalarios,</li> 
                     <li>Mejorar la movilidad de los consumidores,</li> 
@@ -241,17 +234,18 @@ import Layout from '../../layouts/Layout.astro';
                 <p>Bienvenido Frédéric.</p>
                 <div class="footerDoc">
                     <hr class="hrFooter">
-                    <p><a class="linkFormat" href="https://www.oecd-ilibrary.org/sites/39a88ab1-en/1/3/1/index.html?itemId=/content/publi-cation/39a88ab1-en&_ga=2.21641720.219581283.1638326290-351862721.1633387680&_csp_=c8d2c0401e354b876a307e4d7900ec10&itemIGO=oecd&item-ContentType=book#section-d1e180"><sup>1</sup> OECD (2020). OECD Economic Outlook, December.</a></p>
+
+                    <p><a href="#supTop1"><sup id="supBottom1">1</sup></a><a class="linkFormat" href="https://www.oecd-ilibrary.org/sites/39a88ab1-en/1/3/1/index.html?itemId=/content/publi-cation/39a88ab1-en&_ga=2.21641720.219581283.1638326290-351862721.1633387680&_csp_=c8d2c0401e354b876a307e4d7900ec10&itemIGO=oecd&item-ContentType=book#section-d1e180">OECD (2020). OECD Economic Outlook, December.</a></p>
                     
-                    <p><a class="linkFormat" href="https://www.cofece.mx/cofece/images/Estudios/ResumenEjecutivo26-09-14.pdf"><sup>2</sup> Resumen Ejecutivo del Trabajo de Investigación y Recomendaciones sobre las condiciones de competencia en el sector financiero y sus mercados, pag 13.</a></p>
-                    <p><sup>3</sup>CNBV e INEGI. Encuesta Nacional de Inclusión Financiera 2018.</p>
-                    <p><sup>4</sup>INEGI. Encuesta Nacional de Ingresos y Gastos de los Hogares 2020.</p>
+                    <p><a href="#supTop2"><sup id="supBottom2">2</sup></a><a class="linkFormat" href="https://www.cofece.mx/cofece/images/Estudios/ResumenEjecutivo26-09-14.pdf">Resumen Ejecutivo del Trabajo de Investigación y Recomendaciones sobre las condiciones de competencia en el sector financiero y sus mercados, pag 13.</a></p>
+
+                    <p><a href="#supTop3"><sup id="supBottom3">3</sup></a>CNBV e INEGI. Encuesta Nacional de Inclusión Financiera 2018.</p>
+
+                    <p><a href="#supTop4"><sup id="supBottom4">4</sup></a>INEGI. Encuesta Nacional de Ingresos y Gastos de los Hogares 2020.</p>
+
                 </div>
             </div>
             </div>
-            </body>
-            
-            </html>
             
     </astro-fragment>
- 
+</Layout>
