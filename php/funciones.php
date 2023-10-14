@@ -2,16 +2,15 @@
     function obtener_eventos() {
         try {
             
-             include 'db.php';
-    
-            $sql = "SELECT id,expediente, ingreso, fin, resultado,dg from denuncias;";
+            require 'db.php';
+            $sql = "select expediente, articulo_LFCE, ingreso, resolucion, sentido_resolucion
+            from concentraciones;";
     
             $consulta = mysqli_query($db, $sql);
-    
             return $consulta;
-    
-            mysqli_close($db);
-    
+            
+            //mysqli_close($db);
+
         } catch (\Throwable $th) {
             var_dump($th);
         }

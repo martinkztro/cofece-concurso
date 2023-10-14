@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Asuntos de Ivestigaciones">
+<Layout title="Asuntos de Información">
 	<main>
 		<svg
 			class="astro-a"
@@ -30,12 +30,32 @@ import Card from '../components/Card.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1 style="color: #7B7B7B;">APARTADO DE INVESTIGACIONES</span></h1>
+		<h1 style="color: #7B7B7B;">APARTADO DE INFORMACIÓN</span></h1>
 		
-		<ul role="list" class="link-card-grid">
+		<ul role="list" class="link-card-grid">	
 			<Card
-				href="info_investigaciones"
-				title="Conoce nuestras investigaciones"
+				href="http://localhost:3000/php/"
+				title="CONCENTRACIONES"
+				body="lorem ipsum"   
+			/>
+			<Card
+				href=""
+				title="DENUNCIAS"
+				body="lorem ipsum"   
+			/>
+			<Card
+				href=""
+				title="IEBC y DC"
+				body="lorem ipsum"   
+			/>
+			<Card
+				href=""
+				title="Investigaciónes PM y CI"
+				body="lorem ipsum"   
+			/>
+			<Card
+				href=""
+				title="OPINIONES"
 				body="lorem ipsum"   
 			/>
 		</ul>
@@ -107,4 +127,5 @@ import Card from '../components/Card.astro';
 		gap: 2rem;
 		padding: 0;
 	}
+	
 </style>
