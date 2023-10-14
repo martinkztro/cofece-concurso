@@ -30,31 +30,13 @@ import Card from '../components/Card.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1 style="color: #7B7B7B;">APARTADO DE PLENOS</span></h1>
-		
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="plenoseccion1"
-				title="Conoce nuestro pleno"
-				body="En este apartado encontraras la biografía que describe a los comisionados, incluido el comisionado presidente."
-			/>
-			<Card
-				href="plenoseccion3"
-				title="Asuntos resueltos por el pleno"
-				body="Con el objetivo de cumplir con los principios de transparencia y de acceso a la información, así como hacer de carácter público las sesiones, acuerdos y resoluciones del Pleno."
-			/>
-			<Card
-				href="plenoseccion2"
-				title="Proxima sesión del pleno"
-				body="Asuntos que serán discutidos por el Pleno en su próxima sesión."
-			/>
-			<Card
-				href="plenoseccion4"
-				title="Historico de asuntos resueltos por el pleno"
-				body="Encuentra en este apartado el historial de asuntos resueltos por el pleno a largo plazo."
-			/>
-		</ul>
-	</main>
+		<h1 style="color: #7B7B7B;">ASUNTOS RESUELTOS</h1>
+		<h3 class="context"style="color: #7B7B7B;" >Con el objetivo de cumplir con los principios de transparencia y de acceso a la información, así como hacer de carácter público las sesiones, acuerdos y resoluciones del Pleno, en términos del artículo 18 de la Ley Federal de Competencia Económica publicada en el Diario Oficial de la Federación el 23 de mayo de 2014, se da a conocerla versión pública de dichas determinaciones.</h3>
+        <br>
+        <hr>
+
+	
+    </main>
 </Layout>
 
 <style>
@@ -67,6 +49,19 @@ import Card from '../components/Card.astro';
 		font-size: 20px;
 		background-color: rgb(255, 255, 255);
 		line-height: 1.6;
+	}
+
+	.more {
+		margin: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: .3s;
+		border-radius: 8%;
+	}
+
+	.more:hover{
+		background-color:#00a099;
 	}
 
 	
@@ -84,6 +79,21 @@ import Card from '../components/Card.astro';
 		z-index: -1;
 
 	}
+    .perfil{
+        margin: auto;
+    }
+
+	hr{
+        background-color:#00a099;
+        height: 0.1em;
+        border-radius:1.5rem;
+        clear: both;
+    }
+
+    .context{
+        text-align: center;
+    }
+
 	h1 {
 		font-size: 3rem;
 		font-weight: 620;
