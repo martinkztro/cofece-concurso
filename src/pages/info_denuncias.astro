@@ -4,7 +4,7 @@ var ruta = "http://localhost:4321/DATOS_COFECE.json";
 const getInfo = async () => {
 	const res = await fetch(ruta);
 	const c = await res.json();
-	return c.concentraciones;
+	return c.denuncias;
 }
 const c = await getInfo();
 ---
@@ -12,7 +12,7 @@ const c = await getInfo();
 	<section class="mt-48 font-bold text-black-700">
         <div class="hero__bienvenida">
             <p>Bienvenido(a) al</p>
-            <h1>Panel de Concentraciones</h1>
+            <h1>Panel de Denuncias</h1>
         </div>
 
     </section>
@@ -24,22 +24,28 @@ const c = await getInfo();
 						<li class="border-2 border-black">									
 							<div class="lista__titulo evento">
 								<p class="font-bold mb-5 border-b-2 border-black p-2">EXPEDIENTE</p>
-								<!--<p class="font-bold mb-5 border-b-2 border-black p-2">FALTA AGENTES ECONOMICOS/ETC</p>-->
-								<p class="font-bold mb-5 border-b-2 border-black p-2">ARTÍCULO LFCE</p>
 								<p class="font-bold mb-5 border-b-2 border-black p-2">INGRESO</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">RESOLUCIÓN</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">SENTIDO DE LA RESOLUCIÓN</p>
-								{
-									c.map(cons =>(
+								<p class="font-bold mb-5 border-b-2 border-black p-2">FIN</p>
+								<p class="font-bold mb-5 border-b-2 border-black p-2">RESULTADO</p>
+								<p class="font-bold mb-5 border-b-2 border-black p-2">ACUMULADO A</p>
+                                <!--<p class="font-bold mb-5 border-b-2 border-black p-2">DG</p>
+								-->
+                                {
+									c.map(cons => (
 										<p>{cons.expediente}</p>
-										<p>{cons.articulo_LFCE}</p>
 										<p>{cons.ingreso}</p>
-										<p>{cons.resolucion}</p>
-										<p>{cons.sentido_resolucion}</p>
+										<p>{cons.fin}</p>
+										<p>{cons.resultado}</p>
+										<p>{cons.acumulado_a}</p>
+                                        /*<p>{cons.acumulado_a}</p>*/
+
 									))
+	
 								}
 							</div>
+							
 						</li>
+					
 				</ul>
             </div>
         </section>
@@ -118,9 +124,6 @@ main {
     align-items: center;
     color: var(--negro);
     border-radius: 10px;
-
-    
-    padding: .3rem 1rem;
 }
 .lista__titulo {
     color: var(--blanco);
