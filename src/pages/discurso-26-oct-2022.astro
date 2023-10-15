@@ -1,23 +1,16 @@
 ---
-// Discurso v2 in Astro
-import '../../Styles/stylesDiscurso.css'
-import Layout from '../../layouts/Layout.astro';
+// 'discurso' final ver: Adds tailwind styles to makeup for the lack of html default styling.
+import '../Styles/stylesDiscurso.css'
+import Layout from '../layouts/Layout.astro';
 ---
 
+<Layout title="Cofece - Discurso">
     <astro-fragment>
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Jornada por la Competencia 2022</title>
-        </head>
 
-        <body>
-                <div class="grid-container">
+                <div class="grid-container" style="margin-top: 5%; margin-bottom: 5%;">
                 <div class="containerDoc main">
-                <h2 class="colorNavy">Jornada por la Competencia 2022</h2>
-                <h2 class="colorNavy">Sector financiero en México: retos y oportunidades</h2>
+                <h2 class="text-xl font-semibold colorNavy">Jornada por la Competencia 2022</h2>
+                <h2 class="text-xl font-semibold colorNavy">Sector financiero en México: retos y oportunidades</h2>
                 <p>Miércoles 26 de octubre de 2022.</p>
                 
                 <p>9:30 a 9:45 hrs. Mensaje de bienvenida de la Comisionada Presidenta</p>
@@ -27,17 +20,16 @@ import Layout from '../../layouts/Layout.astro';
                 <p class="colorBlue centerText">Mensaje de bienvenida</p>
                 <hr class="colorBlue hrShort">
                 <p>Saludos iniciales.</p>
-                <p><ul>
+                <p><ul class="list-disc ml-10">
                     <li>Muy buenos días, me da mucho gusto saludar esta mañana a todos quienes nos acompañan en este importante evento para la Comisión Federal de Competencia Económica, que afortunadamente, podemos retomar en formato híbrido tras más de dos difíciles años de pandemia.</li>
                 <li>Saludo con mucho gusto a los panelistas con los que tenemos el honor de contar hoy, distinguidos miembros de la academia, servidores y exservidores públicos, representantes del sector privado, así como miembros de organismos internacionales y a las agencias de competencia que nos siguen desde otros países.</li>
                 <li>Y por supuesto saludo y agradezco la presencia de Frederic Jenny, Presidente del Comité de Competencia de la Organización para la Cooperación y el Desarrollo Económico (OCDE), así como de todo el público que nos acompaña tanto presencialmente como a través de las redes de la COFECE.</li>
-            </ul></p>
-                
-                <h3 class="colorBlue">Importancia de la política de competencia.</h3>
+            </ul></p>       
+                <h3 class="text-lg font-semibold colorBlue" style="margin-top: 30px;">Importancia de la política de competencia.</h3>
                 <p>Quiero iniciar esta mañana reiterando algo que desde la COFECE tenemos muy claro: que la competencia económica conlleva enormes beneficios como menores precios, más y mejores bienes y servicios, mayores alternativas de compra para los consumidores y, en general, eficiencia en los mercados que en última instancia conlleva un mayor desarrollo económico.</p>
                 <p>A su vez, los costos de la falta de competencia también son evidentes: precios más altos, menor calidad, poca variedad, falta de innovación, privilegios para unos pocos y mercados pequeños e ineficientes.</p>
                 <p>En este sentido, podemos aseverar que la competencia económica es una <b>poderosa herramienta</b> para mejorar las condiciones de vida de las familias mexicanas, especialmente aquellas con las condiciones económicas menos favorables.</p>
-                <h3 class="colorBlue">Entorno global.</h3>
+                <h3 class="text-lg font-semibold colorBlue">Entorno global.</h3>
                 <p>En la COFECE somos conscientes de las complejas condiciones económicopolíticas que se observan actualmente, no sólo en nuestro país, sino en gran
                     parte del mundo:</p>
                 <p>El entorno global actual se caracteriza por elementos de volatilidad,
@@ -76,7 +68,7 @@ import Layout from '../../layouts/Layout.astro';
                     imperante impulsar una política de competencia que permita a las empresas
                     contar con mejores condiciones de acceso a insumos, capital, tecnología e
                     infraestructura.</p>
-                <h3 class="colorBlue">JxC y sector financiero.</h3>
+                <h3 class="text-lg font-semibold colorBlue">JxC y sector financiero.</h3>
                 <p>Como ustedes saben, la Comisión guía su actuar con un Plan Estratégico que
                     incorpora una priorización de sectores con la cual se busca un mayor impacto
                     de las intervenciones de la COFECE en términos de eficiencia sobre el
@@ -95,7 +87,7 @@ import Layout from '../../layouts/Layout.astro';
                     economías con mayores niveles de crecimiento y bienestar impulsan sistemas
                     financieros más sólidos y profundos<a href="#supBottom2"><sup id="supTop2">2</sup></a></p>
                 <p>En nuestro país, la relevancia de este sector es evidente:</p>
-                <p><ul>
+                <p><ul class="list-disc ml-10">
                     <li>En 2020, aportó el 5% del PIB y, de 2016 a 2020, creció 7.23%.</li>
                     <li>En especial, el subsector de fianzas, seguros y pensiones registró un
                         crecimiento en el mismo periodo de casi 50%, lo que representa una
@@ -120,7 +112,7 @@ import Layout from '../../layouts/Layout.astro';
                     la COFECE ha realizado diversas intervenciones para promover mayor
                     eficiencia en los mercados financieros:
                     </p>
-                <p><ul>
+                <p><ul class="list-disc ml-10">
                     <li>En 2014 publicamos un trabajo de investigación sobre las condiciones
                         de competencia en el sector financiero, en el que se analizan y emiten
                         recomendaciones en algunos de los mercados más relevantes como
@@ -184,7 +176,7 @@ import Layout from '../../layouts/Layout.astro';
                     servicios.</p>
                 <p>En particular, en lo referente al mercado de seguros de gastos médicos, el
                     estudio presenta recomendaciones enfocadas en 4 aspectos:</p>
-                <p><ol>
+                <p><ol class="list-decimal ml-8">
                     <li>Fomentar la transparencia en el mercado relacionado de servicios
                         hospitalarios,</li> 
                     <li>Mejorar la movilidad de los consumidores,</li> 
@@ -255,8 +247,6 @@ import Layout from '../../layouts/Layout.astro';
                 </div>
             </div>
             </div>
-            </body>
             
-            </html>
-            
-    </astro-fragment>
+        </astro-fragment>
+    </Layout>
