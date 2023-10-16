@@ -2,10 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 var ruta = "http://localhost:4321/DATOS_COFECE.json";
 const getInfo = async () => {
-	const res = await fetch(ruta);
-	const c = await res.json();
-	return c.opiniones;
-}
+  const res = await fetch(ruta);
+  const data = await res.json();
+  const opiniones = data.opiniones || [];
+  const elementos = opiniones.slice(0, 20);
+  return elementos;
+};
 const c = await getInfo();
 ---
 <Layout title="Asuntos del pleno">
@@ -24,19 +26,19 @@ const c = await getInfo();
 						<li class="border-2 border-black">									
 							<div class="lista__titulo evento">
 								<p class="font-bold mb-5 border-b-2 border-black p-2">FECHA ANTEPROYECTO</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">NOTIFICADO POR</p>
 								<p class="font-bold mb-5 border-b-2 border-black p-2">FECHA DE EMISIÓN</p>
 								<p class="font-bold mb-5 border-b-2 border-black p-2">EXPEDIENTE</p>
 								<p class="font-bold mb-5 border-b-2 border-black p-2">CONVENIO COFECE-COFEMER</p>
+                                <p class="font-bold mb-5 border-b-2 border-black p-2">NOTIFICADO POR</p>
                                 <!--<p class="font-bold mb-5 border-b-2 border-black p-2">FALTANTESXD</p>
 								-->
                                 {
 									c.map(cons => (
 										<p>{cons.fecha_anteproyecto}</p>
-										<p>{cons.notificado_por}</p>
 										<p>{cons.fecha_emision}</p>
 										<p>{cons.expediente}</p>
 										<p>{cons.convenio_Cofece_COFEMER}</p>
+                                        <p>{cons.notificado_por}</p>
 									))
 	
 								}

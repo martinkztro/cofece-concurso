@@ -1,12 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-var ruta = "http://localhost:4321/DATOS_COFECE.json";
+const ruta = "http://localhost:4321/DATOS_COFECE.json";
+
 const getInfo = async () => {
-	const res = await fetch(ruta);
-	const c = await res.json();
-	return c.concentraciones;
-}
+  const res = await fetch(ruta);
+  const data = await res.json();
+  const concentraciones = data.concentraciones || [];
+  const elementos = concentraciones.slice(0, 20);
+  return elementos;
+};
 const c = await getInfo();
+/*console.log(c);*/
 ---
 <Layout title="Asuntos del pleno">
 	<section class="mt-48 font-bold text-black-700">
@@ -18,31 +22,30 @@ const c = await getInfo();
     </section>
  
     <main>
-        <section id="secc-reservaciones" class="reservaciones">
-            <div class="reservaciones__container">
-                <ul class="lista__eventos">
-						<li class="border-2 border-black">									
-							<div class="lista__titulo evento">
-								<p class="font-bold mb-5 border-b-2 border-black p-2">EXPEDIENTE</p>
-								<!--<p class="font-bold mb-5 border-b-2 border-black p-2">FALTA AGENTES ECONOMICOS/ETC</p>-->
-								<p class="font-bold mb-5 border-b-2 border-black p-2">ARTÍCULO LFCE</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">INGRESO</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">RESOLUCIÓN</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">SENTIDO DE LA RESOLUCIÓN</p>
-								{
-									c.map(cons =>(
-										<p>{cons.expediente}</p>
-										<p>{cons.articulo_LFCE}</p>
-										<p>{cons.ingreso}</p>
-										<p>{cons.resolucion}</p>
-										<p>{cons.sentido_resolucion}</p>
-									))
-								}
-							</div>
-						</li>
-				</ul>
-            </div>
-        </section>
+        <button type="button">Siguiente</button>
+        <div class="reservaciones__container">
+            <ul class="lista__eventos">
+                    <li class="border-2 border-black">									
+                        <div class="evento">
+                            <p class="font-bold mb-5 border-b-2 border-black p-2">EXPEDIENTE</p>
+                            <!--<p class="font-bold mb-5 border-b-2 border-black p-2">FALTA AGENTES ECONOMICOS/ETC</p>-->
+                            <p class="font-bold mb-5 border-b-2 border-black p-2">ARTÍCULO LFCE</p>
+                            <p class="font-bold mb-5 border-b-2 border-black p-2">INGRESO</p>
+                            <p class="font-bold mb-5 border-b-2 border-black p-2">RESOLUCIÓN</p>
+                            <p class="font-bold mb-5 border-b-2 border-black p-2">SENTIDO DE LA RESOLUCIÓN</p>
+                            {
+                                c.map(cons =>(
+                                    <p>{cons.expediente}</p>
+                                    <p>{cons.articulo_LFCE}</p>
+                                    <p>{cons.ingreso}</p>
+                                    <p>{cons.resolucion}</p>
+                                    <p>{cons.sentido_resolucion}</p>
+                                ))
+                            }
+                        </div>
+                    </li>
+            </ul>
+        </div>
     </main>
 </Layout>
 
@@ -61,7 +64,6 @@ body {
 main {
     text-align: center;
 }
-/* HEADER */
 .header {
     color: var(--blanco);
 
@@ -72,34 +74,7 @@ main {
     align-items: center;
     padding: .6rem .8rem;
 }
-.header__cuenta {
-    display: flex;
-    align-items: center;
-}
-.header__cuenta img {
-    width: 45px;
 
-}
-.header__logo {
-    margin-right: 5.2rem;
-}
-.header__logo span {
-    color: var(--rosa);
-}
-.header__logout img{
-    filter: invert(1);
-    margin-right: .7rem;
-    line-height: 30px;
-    cursor: pointer;
-}
-/* HERO */
-.hero {
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--blanco);
-}
 .hero__bienvenida {
     margin: 0 auto;
     text-align: center;
@@ -118,15 +93,8 @@ main {
     align-items: center;
     color: var(--negro);
     border-radius: 10px;
-
-    
     padding: .3rem 1rem;
 }
-.lista__titulo {
-    color: var(--blanco);
-}
-.card {
-    background-color: var(--blanco);
-}
+
 
 </style>
