@@ -1,10 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 ---
 
 <Layout title="Asuntos del pleno">
-	<main>
+	<main class="md:grid-cols-2">
 		<svg
 			class="astro-a"
 			width="495"
@@ -31,6 +30,7 @@ import Card from '../components/Card.astro';
 			</defs>
 		</svg>
 		<h1 style="color: #7B7B7B;">CONOCE NUESTRO PLENO</h1>
+
 		<h3 class="context"style="color: #7B7B7B;" >El Pleno es el órgano de gobierno de la Comisión, encargado de resolver con plena independencia y autonomía, de forma colegiada y por mayoría de votos, los casos y asuntos que por mandato constitucional atiende.</h3>
 	    <img class="perfil" src="public/perfil1.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Andrea Marvan Saltiel</h3>
@@ -41,9 +41,9 @@ import Card from '../components/Card.astro';
 		<button class="more" style="color: black;">Ver mas</button>
 	</a>
 		<hr>
-		<br>
 
-        <img class="perfil" src="public/perfil2.jpg" alt="">
+
+        <img class="perfil" src="public/perfil.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Alejandro Faya Rodriguez</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionado</h3>
 		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
@@ -109,9 +109,10 @@ import Card from '../components/Card.astro';
 
 <style>
 	main {
-        justify-content: center;
-        margin: 7rem auto;
-		width: 800px;
+		display: grid;
+		grid-template-columns: 1fr;
+		margin-top: 7rem;
+		width: 100%;
 		max-width: calc(100% - 2rem);
 		color: rgb(255, 255, 255);
 		font-size: 20px;

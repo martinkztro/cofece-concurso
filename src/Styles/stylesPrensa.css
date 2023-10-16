@@ -1,0 +1,117 @@
+.buttons {
+    margin: 10%;
+    text-align: center;
+}
+
+.buttons-array {
+    text-align: center;
+    margin: 0px 20px 0px 20px; /*top, right, bottom, left*/
+}
+
+.btn-year {
+    width: 100%; 
+    height: 55px; 
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 15px auto;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 0px; 
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-year:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-year:focus {
+    outline: none;
+}
+
+.btn-year.color-green {
+    background-color: #00a099;
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+.article-title {
+    width: 70%;
+    margin-left: 15%;
+    text-align: left;
+    margin-top: 0%;
+    color: #0ba360;
+    font-weight: bold;
+    transition: color 0.4s ease-in-out; 
+}
+
+
+.article-title:hover {
+    color: #30dd8a; 
+}
+
+/*column test*/
+.article-details {
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.article-person{
+/*column test flex 1 for column*/
+    text-align: left;
+    margin-right: 10px;
+   /*margin-right: */
+}
+
+.divtest {
+    justify-content: right;
+}
+.article-date {
+/*column test flex 1 for column*/
+    text-align: right;
+    
+}
+
+.article-pdf {
+/*column test flex 1 for column*/
+    text-align: left; 
+}
+
+.article-link {
+    color: inherit; 
+    text-decoration: inherit; 
+}
+
+.hidden {
+    display: none;
+}
+
+
+.textRight {
+    width: 70%;
+    margin-left: 15%;
+    text-align: left;
+    margin-top: 0%;
+    font-weight: bold;
+}
+
+.linkFormat {
+    color: rgb(1, 87, 155);
+    text-decoration: underline; 
+}
+
+.linkFormat:hover {
+    color:  rgb(0, 172, 193);
+}
+
