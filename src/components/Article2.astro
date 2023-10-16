@@ -1,0 +1,74 @@
+---
+// This component receives an array of articles
+interface Props {
+    year?: number;
+    articles?: Array<{ year: number; title: string; person: string; date: string, link: string, pdf: string }>;
+}
+
+const { year, articles } = Astro.props;
+
+---
+
+<div class="buttons-array">
+    <button class="btn-year color-green" id={`btn${year}`} data-year={year}>{year}</button>
+    <div class="article-content" id={`article${year}`}>
+        <!-- iterate articles -->
+        {articles.filter(article => article.year === year).map((article, index) => (
+            <div>
+                <p class="article-title"><a href={article.link}>{article.title}</a></p>
+                <div class="article-details">
+                    <div class="article-person"><span>{article.person}</span></div>
+                    <div class="testdiv">
+                    <div class="article-date"><span>Fecha: {article.date}</span></div>
+                    </div>
+                    <div class="article-pdf linkFormat">
+                        <a href={article.pdf} target="_blank" rel="noopener noreferrer">Descargar PDF</a>
+                    </div>
+                </div>
+
+                <hr style="width: 70%; margin-left: 15%;">
+            </div>
+        ))}    
+        {articles.filter(article => article.year === year).length === 0 && (
+            <p class="article-title">No hay artículos en esta sección</p>
+        )}
+    </div>
+</div>
+
+
+<script>
+    // Find button with class
+    const buttons = document.querySelectorAll('button.btn-year');
+    const articles = document.querySelectorAll('.article-content');
+
+    // Flag
+    let isHidden = true;
+
+    // Hide article
+    articles.forEach(article => {
+    const htmlArticle = article as HTMLElement;
+    htmlArticle.hidden = true;
+    });
+
+
+    buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const year = parseInt(button.textContent, 10);
+        const article = document.querySelector(`.article-content#article${year}`);
+        displayContent(article);
+    });
+});
+
+    // Function to display or hide content
+    function displayContent(article) {
+        if (article){
+        isHidden = !isHidden;
+        article.hidden = isHidden;
+        console.log(`Is article hidden? ${isHidden}`);
+        console.log("Display content function");
+        } else {
+            console.log("article not found");
+        }
+    }
+
+    </script>

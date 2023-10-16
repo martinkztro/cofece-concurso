@@ -1,0 +1,119 @@
+
+:root {
+    /*colors*/
+    /*colors background*/
+    --colorWhite255: rgb(255, 255, 255);
+    --colorWhite245: rgb(245, 245, 245);
+    --colorWhite240: rgb(240, 240, 240);
+    /*colors other*/
+    --colorBlue: rgb(75, 113, 194);
+    /*colors link*/
+    --colorCyan300: rgb(77, 208, 225);
+    --colorCyan400: rgb(38, 198, 218);
+    --colorCyan500: rgb(0, 188, 212);
+    --colorCyan600: rgb(0, 172, 193);
+    --colorCyan700: rgb(2, 136, 209);
+    --colorCyan800: rgb(2, 119, 189);
+    --colorCyan900: rgb(1, 87, 155);
+    
+}
+
+.header { grid-area: header; }
+.left { grid-area: left; }
+.main { grid-area: main; }
+.right { grid-area: right; }
+.footer { grid-area: footer; }
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'header header header header header header'
+    'main main main main right right'
+    'footer footer footer footer footer footer';
+    gap: 10px;
+    padding: 10px;
+}
+
+.grid-container > div {
+    background-color: var(--colorWhite245); /*rgba(255, 255, 255, 0.8);*/
+    padding: 20px 0;
+
+}
+
+/* Responsive layout - when the screen is less than 800px wide */
+@media screen and (max-width: 800px) {
+.grid-container {
+grid-template-areas:
+    'header'
+    'menu'
+    'main'
+    'right'
+    'footer';
+    grid-template-columns: 1fr; /* Double-check: Make single column */
+}
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+
+.colorNavy {
+    color: navy;
+}
+.colorBlue{
+    color: var(--colorBlue);
+}
+.containerDoc {
+text-align: left; 
+line-height: 1.8; 
+font-size: 16px; 
+max-width: 750px; 
+padding: 20px; /* padding x visual spacing */
+font-family: Verdana, Geneva, Tahoma, sans-serif; /* Readable font */
+}
+.containerDoc p{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.hrShort {
+    border-top: 3px solid;
+    width: 80%; 
+    margin: 0 auto; /* Horizontal center */
+}
+
+.hrFooter {
+    border-top: 2px solid;
+    width: 40%; 
+    margin: 0; 
+    margin-left: 0; 
+}
+
+.footerDoc {
+    font-size: 12px;
+}
+
+/* Base styles for link */
+.linkFormat {
+    font-size: 12px;
+    color: var(--colorCyan900); 
+    text-decoration: underline; 
+}
+/* Hover styles for the link */
+.linkFormat:hover {
+    color: var(--colorCyan600); 
+}
+.footerDoc p {
+    margin: initial;
+    font-size: 12px;
+}
+
