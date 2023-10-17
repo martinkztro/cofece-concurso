@@ -2,10 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 var ruta = "http://localhost:4321/DATOS_COFECE.json";
 const getInfo = async () => {
-	const res = await fetch(ruta);
-	const c = await res.json();
-	return c.investigaciones_pm_ci;
-}
+  const res = await fetch(ruta);
+  const data = await res.json();
+  const investigaciones_pm_ci = data.investigaciones_pm_ci || [];
+  const elementos = investigaciones_pm_ci.slice(0, 20);
+  return elementos;
+};
 const c = await getInfo();
 ---
 <Layout title="Asuntos del pleno">

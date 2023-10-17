@@ -2,10 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 var ruta = "http://localhost:4321/DATOS_COFECE.json";
 const getInfo = async () => {
-	const res = await fetch(ruta);
-	const c = await res.json();
-	return c.iebc_y_dc;
-}
+  const res = await fetch(ruta);
+  const data = await res.json();
+  const iebc_y_dc = data.iebc_y_dc || [];
+  const elementos = iebc_y_dc.slice(0, 20);
+  return elementos;
+};
 const c = await getInfo();
 ---
 <Layout title="Asuntos del pleno">
@@ -41,31 +43,7 @@ const c = await getInfo();
 	
 								}
 							</div>
-							
-						</li>
-                        <li class="border-2 border-black">									
-							<div class="lista__titulo evento">
-								<p class="font-bold mb-5 border-b-2 border-black p-2">TIPO 2</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">TERMINIO DE INVESTIGACIÓN</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">RESULTADO DE INVESTIGACIÓN</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">RESULTADO DETALLE</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">MERCADO NOMBRE CORTO</p>
-                                <!--<p class="font-bold mb-5 border-b-2 border-black p-2">FALTARIAN OTROS</p>
-								-->
-                                {
-									c.map(cons => (
-										<p>{cons.tipo_2}</p>
-										<p>{cons.fecha_termino_periodo_investigacion}</p>
-										<p>{cons.resultado_periodo_investigacion}</p>
-										<p>{cons.resultado_detalle}</p>
-										<p>{cons.mercado_nombre_corto}</p>
-									))
-	
-								}
-							</div>
-							
-						</li>
-					
+						</li>		
 				</ul>
             </div>
         </section>
