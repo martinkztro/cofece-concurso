@@ -8,21 +8,14 @@
     margin: 0px 20px 0px 20px; /*top, right, bottom, left*/
 }
 
-.center-vertical {
-    margin-top: 15%;
-    margin-bottom: 10%;
-    
-
-}
-
 .btn-year {
-    width: 70%; 
+    width: 100%; 
     height: 55px; 
     font-size: 16px;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    margin: 15px;
+    margin: 15px auto;
     text-align: center;
     border: none;
     background-size: 300% 100%;
@@ -47,7 +40,7 @@
 }
 
 .btn-year.color-green {
-    background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    background-color: #00a099;
     box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
@@ -68,7 +61,6 @@
 
 /*column test*/
 .article-details {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 70%;
@@ -79,7 +71,6 @@
 /*column test flex 1 for column*/
     text-align: left;
     margin-right: 10px;
-    white-space: nowrap; 
    /*margin-right: */
 }
 
@@ -91,7 +82,6 @@
     text-align: right;
     
 }
-
 
 .article-pdf {
 /*column test flex 1 for column*/

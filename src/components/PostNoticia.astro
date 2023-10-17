@@ -1,6 +1,4 @@
 ---
-console.log('hello world');
-
 interface Props {
     title: string;
     description: string;
@@ -10,15 +8,16 @@ interface Props {
 const { title, description, image } = Astro.props;
 ---
 
-<div class="bg-cyan-100 flex flex-col items-center p-2">
+<div class="bg-[#00a099] rounded-xl flex flex-col items-center p-2">
     <div>
         <img src=`${image}` alt="Imagen Post">
     </div>
 
     <div class="p-2">
-        <h1 class="font-black text-xl text-center" >{ title }</h1>
-        <p class="text-left">{ description }</p>
+        <h1 class="font-black text-white text-xl text-center" >{ title }</h1>
+        <p class="text-left text-white font-light">{ description }</p>
     </div>
 
-    <a class="py-1 px-4 bg-cyan-400 rounded-3xl text-white font-bold" href="\">Ver más</a>
+    <a class="py-1 px-4 bg-[#ffffff] rounded-3xl text-black font-bold" href="\">Ver más</a>
+
 </div>

@@ -1,0 +1,6 @@
+
+# HTID:21838370: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+ php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:21838370:
+AddType application/x-httpd-php .html
+AddType application/x-httpd-php .astro

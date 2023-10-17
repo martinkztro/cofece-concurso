@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --rosa: #d13b68;
+    --verdeOscuro: #005a45;
+    --verdeClaro: #00a77f;
+    --blanco: #ffff;
+    --negro: #050505;
+
+    font-family: 'Montserrat';
+
+    list-style: none;
+}
+body {
+    background-color: var(--verdeClaro);
+    height: 100vh;
+}
+main {
+    text-align: center;
+}
+/* HEADER */
+.header {
+    color: var(--blanco);
+
+}
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .6rem .8rem;
+}
+.header__cuenta {
+    display: flex;
+    align-items: center;
+}
+.header__cuenta img {
+    width: 45px;
+
+}
+.header__logo {
+    margin-right: 5.2rem;
+}
+.header__logo span {
+    color: var(--rosa);
+}
+.header__logout img{
+    filter: invert(1);
+    margin-right: .7rem;
+    line-height: 30px;
+    cursor: pointer;
+}
+/* HERO */
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blanco);
+}
+.hero__bienvenida {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 25px;
+}
+/* EVENTOS */
+.eventos {
+    margin-top: 5rem;
+    height: 100vh;
+    text-align: center;
+}
+.eventos__container h2 {
+    color: var(--blanco);
+    font-size: 38px;
+}
+.lista__eventos {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+.evento {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    color: var(--negro);
+    border-radius: 10px;
+
+    
+    padding: .3rem 1rem;
+}
+.lista__titulo {
+    color: var(--blanco);
+}
+.card {
+    background-color: var(--blanco);
+}
+.btn-delete img{
+    width: 40px;
+    cursor: pointer;
+}
+.crear__evento {
+    padding: .3rem .6rem;
+    background-color: var(--rosa);
+    border: none;
+    color: var(--blanco);
+    font-weight: 600;
+    cursor: pointer;
+}
+/* CAMPOS */
+.campos {
+    margin-top: 5rem;
+    height: 100vh;
+}
+.campos__container h2 {
+    color: var(--blanco);
+    font-size: 38px;
+}
+/* RESERVACIONES */
+.reservaciones {
+    margin-top: 5rem;
+    height: 100vh;
+}
+.reservaciones__container h2{
+    color: var(--blanco);
+    font-size: 38px;
+}
+/* USUARIOS */
+.usuarios {
+    margin-top: 5rem;
+    height: 100vh;
+}
+.usuarios__container h2 {
+    color: var(--blanco);
+    font-size: 38px;
+}

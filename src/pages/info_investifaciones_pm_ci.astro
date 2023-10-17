@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+var ruta = "http://localhost:4321/DATOS_COFECE.json";
+const getInfo = async () => {
+	const res = await fetch(ruta);
+	const c = await res.json();
+	return c.investigaciones_pm_ci;
+}
+const c = await getInfo();
+---
+<Layout title="Asuntos del pleno">
+	<section class="mt-48 font-bold text-black-700">
+        <div class="hero__bienvenida">
+            <p>Bienvenido(a) al</p>
+            <h1>Panel de Investigaciones PM y CI</h1>
+        </div>
+
+    </section>
+ 
+    <main>
+        <section id="secc-reservaciones" class="reservaciones">
+            <div class="reservaciones__container">
+                <ul class="lista__eventos">
+						<li class="border-2 border-black">									
+							<div class="lista__titulo evento">
+								<p class="font-bold mb-5 border-b-2 border-black p-2">EXPEDIENTE</p>
+								<p class="font-bold mb-5 border-b-2 border-black p-2">SENTIDO DE RESOLUCIÓN</p>
+								<p class="font-bold mb-5 border-b-2 border-black p-2">TIPO_PRACTICA</p>
+								<p class="font-bold mb-5 border-b-2 border-black p-2">INICIO</p>
+								<p class="font-bold mb-5 border-b-2 border-black p-2">FECHA DE RESOLUCIÓN</p>
+                                <!--<p class="font-bold mb-5 border-b-2 border-black p-2">FALTANTESXD</p>
+								-->
+                                {
+									c.map(cons => (
+										<p>{cons.expediente}</p>
+										<p>{cons.sentido_resolucion}</p>
+										<p>{cons.tipo_practica}</p>
+										<p>{cons.inicio}</p>
+										<p>{cons.fecha_resolucion}</p>
+									))
+	
+								}
+							</div>
+							
+						</li>
+					
+				</ul>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    list-style: none;
+}
+body {
+    background-color: var(--verdeClaro);
+    height: 100vh;
+}
+main {
+    text-align: center;
+}
+/* HEADER */
+.header {
+    color: var(--blanco);
+
+}
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .6rem .8rem;
+}
+.header__cuenta {
+    display: flex;
+    align-items: center;
+}
+.header__cuenta img {
+    width: 45px;
+
+}
+.header__logo {
+    margin-right: 5.2rem;
+}
+.header__logo span {
+    color: var(--rosa);
+}
+.header__logout img{
+    filter: invert(1);
+    margin-right: .7rem;
+    line-height: 30px;
+    cursor: pointer;
+}
+/* HERO */
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blanco);
+}
+.hero__bienvenida {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 25px;
+}
+.lista__eventos {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+.evento {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    color: var(--negro);
+    border-radius: 10px;
+}
+.lista__titulo {
+    color: var(--blanco);
+}
+.card {
+    background-color: var(--blanco);
+}
+
+</style>

@@ -13,9 +13,9 @@ const { year, articles } = Astro.props;
     <div class="article-content" id={`article${year}`}>
         <!-- iterate articles -->
         {articles.filter(article => article.year === year).map((article, index) => (
-            <div>
+            <div class="">
                 <p class="article-title"><a href={article.link}>{article.title}</a></p>
-                <div class="article-details">
+                <div class="article-details flex flex-col md:flex-row">
                     <div class="article-person"><span>{article.person}</span></div>
                     <div class="testdiv">
                     <div class="article-date"><span>Fecha: {article.date}</span></div>
