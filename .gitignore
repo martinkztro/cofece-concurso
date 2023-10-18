@@ -22,4 +22,6 @@ pnpm-debug.log*
 
 # other files
 CURRENT_BRANCH.TXT
-src/pages/discursos/pdftest.astro
+src/pages/publicaciones/pdftest.astro
+src/pages/discursosypresentacionestest.astro
+src/components/Articletest.astro
