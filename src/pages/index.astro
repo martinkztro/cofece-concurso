@@ -1,13 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PostNoticia from '../components/PostNoticia.astro';
+import Navbar from '../components/Navbar.astro';
+import type { Code, Debug } from 'astro:components';
 ---
 
 <Layout title="Cofece - Comisión Federal de Competencia Económica">
 	<main class="grid mt-32 gap-6 mb-24 bg-white mx-4 px-3">
 		<div class="flex items-center gap-3 mt-3 mb-3 mx-auto">
-			<a href="" class="px-3 py-1 bg-[#00a099] rounded-3xl text-white font-thin">Comunicados</a>
-			<a href="/discursosypresentaciones" class="">Discursos y Presentaciones</a>
+			<a href="" class="px-3 py-1 bg-[#00a099] rounded-3xl text-white font-normal">Comunicados</a>
+			<a href="/discursosypresentaciones" class="font-normal">Discursos y Presentaciones</a>
 		</div>
 		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
 		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
@@ -19,4 +21,5 @@ import PostNoticia from '../components/PostNoticia.astro';
 		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
 	</main>
 
+	<Navbar selected='props' textSelected='props' selected2='props' textSelected2='props'/>		
 </Layout>
