@@ -1,5 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+
 var ruta = "http://localhost:4321/DATOS_COFECE.json";
 const getInfo = async () => {
   const res = await fetch(ruta);
@@ -61,27 +63,68 @@ const c = await getInfo();
      
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20">
           {
-            c.map(cons =>(
-                <div class="bg-white space-y-3 p-4 rounded-lg shadow">
-                    <div class="flex items-center space-x-2 text-sm">
-                        <div>
-                            <a href="#" class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">{cons.inicio}</a>
-                        </div>
-                        <div class="text-gray-500">{cons.expediente}</div>
-                        <div>
-                            <span
-                            class="text-black-500 font-bold hover:underline">{cons.resultado}</span>         
-                        </div>
-                    </div>
-                    <div class="text-sm text-gray-700">
-                    {cons.mercado_nombre_corto}
-                    </div>
-                    <div class="text-sm font-medium text-black">
-                        <span
-                        class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">{cons.fecha_resolucion}</span>
-                    </div>
-                </div>
+            c.map((cons) => (
+              <tr class="bg-white">
+                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                  <a href="#" class="font-bold text-blue-500 hover:underline">
+                    {cons.expediente}
+                  </a>
+                </td>
+                <td class="p-3 text-sm text-center text-gray-700 whitespace-nowrap">
+                  {cons.mercado_nombre_corto}
+                </td>
+                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                  <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">
+                    {cons.inicio}
+                  </span>
+                </td>
+                <td class="p-3 text-sm text-green-800 whitespace-nowrap">
+                  <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">
+                    {cons.fecha_resolucion}
+                  </span>
+                </td>
+                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                  {cons.resultado}
+                </td>
+              </tr>
             ))
           }
+        </tbody>
+      </table>
     </div>
+
+    <main class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+      {
+        c.map((cons) => (
+          <div class="bg-white space-y-3 p-4 rounded-lg shadow">
+            <div class="flex items-center space-x-2 text-sm">
+              <div>
+                <a
+                  href="#"
+                  class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50"
+                >
+                  {cons.inicio}
+                </a>
+              </div>
+              <div class="text-gray-500">{cons.expediente}</div>
+              <div>
+                <span class="text-black-500 font-bold hover:underline">
+                  {cons.resultado}
+                </span>
+              </div>
+            </div>
+            <div class="text-sm text-gray-700">{cons.mercado_nombre_corto}</div>
+            <div class="text-sm font-medium text-black">
+              <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">
+                {cons.fecha_resolucion}
+              </span>
+            </div>
+          </div>
+        ))
+      }
+    </main>
+
+</main>
+
+<Navbar selected="" textSelected="" selected2="" textSelected2="" />
 </Layout>

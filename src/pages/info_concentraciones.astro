@@ -1,16 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
 const ruta = "http://localhost:4321/datos_cofece.json";
 
 const getInfo = async () => {
   const res = await fetch(ruta);
   const data = await res.json();
   const concentraciones = data.concentraciones || [];
-  const elementos = concentraciones.slice(0,50);
+  const elementos = concentraciones.slice(0, 50);
   return elementos;
 };
 const c = await getInfo();
 ---
+
 <Layout title="Asuntos de Concentraciones">
     <div class="mt-28 h-screen">
         <table class="w-full">
@@ -61,28 +63,35 @@ const c = await getInfo();
  
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20 ml-4 mr-4">
       {
-        c.map(cons =>(
-            <div class="bg-white space-y-3 p-4 rounded-lg shadow">
-                <div class="flex items-center space-x-2 text-sm">
-                    <div>
-                        <a href="#" class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">{cons.ingreso}</a>
-                    </div>
-                    <div class="text-gray-500">{cons.expediente}</div>
-                    <div>
-                        <spanp
-                        class="text-black-500 font-bold hover:underline">{cons.sentido_resolucion}</spanp>         
-                    </div>
-                </div>
-                <div class="text-sm text-gray-700">
-                {cons.alcance}
-                </div>
-                <div class="text-sm font-medium text-black">
-                    <span
-                    class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">{cons.resolucion}</span>
-                </div>
+        c.map((cons) => (
+          <div class="bg-white space-y-3 p-4 rounded-lg shadow">
+            <div class="flex items-center space-x-2 text-sm">
+              <div>
+                <a
+                  href="#"
+                  class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50"
+                >
+                  {cons.ingreso}
+                </a>
+              </div>
+              <div class="text-gray-500">{cons.expediente}</div>
+              <div>
+                <spanp class="text-slate-600 font-bold hover:underline">
+                  {cons.sentido_resolucion}
+                </spanp>
+              </div>
             </div>
+            <div class="text-sm text-gray-700">{cons.alcance}</div>
+            <div class="text-sm font-medium text-black">
+              <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">
+                {cons.resolucion}
+              </span>
+            </div>
+          </div>
         ))
       }
     </div>
-</Layout>
+</div>
 
+<Navbar selected="" textSelected="" selected2="" textSelected2="" />
+</Layout>

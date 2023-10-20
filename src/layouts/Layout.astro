@@ -1,4 +1,5 @@
 ---
+import Navbar from '../components/Navbar.astro';
 interface Props {
 	title: string
 }
@@ -15,17 +16,44 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
 	</head>
 	<body>
 		<header class="bg-white z-50 w-full shadow-slate-200 shadow-sm fixed top-0">
-			<img src="public/cofece-logos.png" alt="" class="md:w-80">
-			<div class="flex px-4 justify-between items-center py-1">
-				<img id="filterButton" class="w-6 h-6 cursor-pointer" src="public/filter.png" alt="">
-				<div class="flex justify-center gap-3 py-2">
-					<input class="rounded-xl px-3 py-1 bg-slate-100 border-[1px] border-[#00a099]" type="search" placeholder="Ingrese su búsqueda" name="search">
-					<button class="bg-[#00a099] px-7 rounded-2xl shadow-md" type="submit">
-						<img class="w-6 h-6" src="public/search.png" alt="">
-					</button>
+			<img src="public/cofece-logos.png" alt="" class="px-3 mx-auto md:w-96">
+			<div class="md:flex items-center md:justify-around">
+				<nav class="hidden md:block">
+					<ul class="none md:flex md:gap-8 text-lg font-light">
+						<li><a class="" href="/">Prensa</a></li>
+						<li><a class="" href="/pleno">Pleno</a></li>
+						<li><a class="" href="/informacion">Información</a></li>
+						<li><a class="" href="/cuenta">Cuenta</a></li>
+						<li><a class="" href="/ayuda">Ayuda</a></li>
+					</ul>
+				</nav>
+				<div class="flex justify-evenly items-center md:justify-end md:gap-3 ">
+					<svg id="filterButton" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments md:hidden" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="#333F48" fill="none" stroke-linecap="butt" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+						<path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+						<path d="M6 4v4" />
+						<path d="M6 12v8" />
+						<path d="M10 16a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+						<path d="M12 4v10" />
+						<path d="M12 18v2" />
+						<path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+						<path d="M18 4v1" />
+						<path d="M18 9v11" />
+					</svg>
+					<div class="flex justify-center gap-3 py-3">
+						<input class="rounded-xl px-2 py-1 bg-[#333f4810] border-[1px] border-slate-300 md:w-80" type="search" placeholder="Ingrese su búsqueda" name="search">
+						<button class="bg-[#00C7B1] px-6 rounded-2xl shadow-md" type="submit">
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="25" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="#333F48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+								<path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+								<path d="M21 21l-6 -6" />
+							</svg>
+						</button>
+					</div>
 				</div>
 			</div>
 
@@ -48,23 +76,6 @@ const { title } = Astro.props;
 		</header>
 
 		<slot/>
-
-		<nav class="bg-white p-1 fixed bottom-0 w-full shadow-slate-500 shadow-sm">
-			<ul class="flex justify-around items-center px-1">
-				<li class="flex flex-col justify-center items-center">
-					<img src="public/account.png" alt="Logo" class="h-5">
-					<a class="text-md text-black" href="/informacion">Cuenta</a>
-				</li>
-				<li class="flex flex-col justify-center items-center p-2 bg-[#00a099] rounded-full shadow-sm">
-					<img src="public/news.png" alt="Logo" class="h-5">
-					<a class="text-md text-black font-semibold " href="/">Menú</a>
-				</li>
-				<li class="flex flex-col justify-center items-center">
-					<img src="public/help.png" alt="Logo" class="h-5">
-					<a class="text-md text-black " href="/pleno">Ayuda</a>
-				</li>
-			</ul>
-		</nav>
 		
 	</body>
 </html>
@@ -76,6 +87,7 @@ const { title } = Astro.props;
 	filterBtn.addEventListener('click', () => {
 		const filterMenu = document.getElementById('filterMenu');
 		filterMenu.classList.toggle('hidden');
+
 	})
 
 </script>
