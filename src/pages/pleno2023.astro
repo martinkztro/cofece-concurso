@@ -1,35 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <Layout title="Asuntos del pleno">
 	<main>
-		<svg
-			class="astro-a"
-			width="495"
-			height="623"
-			
-			viewBox="0 0 495 623"
-			
-			xmlns="http://www.w3.org/2000/svg"
-			aria-hidden="true"
-		>
-			
-			<defs>
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
 		<h1 style="color: #7B7B7B;">ASUNTOS RESUELTOS</h1>
 		<h3 class="context"style="color: #7B7B7B;" >Con el objetivo de cumplir con los principios de transparencia y de acceso a la información, así como hacer de carácter público las sesiones, acuerdos y resoluciones del Pleno, en términos del artículo 18 de la Ley Federal de Competencia Económica publicada en el Diario Oficial de la Federación el 23 de mayo de 2014, se da a conocerla versión pública de dichas determinaciones.</h3>
         <br>
@@ -839,6 +814,8 @@ import Card from '../components/Card.astro';
 
 	
     </main>
+
+    <Navbar selected="" textSelected="" selected2="" textSelected2="" />
 </Layout>
 
 <style>
