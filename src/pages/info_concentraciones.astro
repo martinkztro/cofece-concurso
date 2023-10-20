@@ -12,45 +12,54 @@ const getInfo = async () => {
 const c = await getInfo();
 ---
 <Layout title="Asuntos de Concentraciones">
-    <div class="mt-28 p-5 h-screen">
-    <div class="overflow-auto rounded-lg shadow hidden md:block pb-16">
-      <table class="w-full">
-        <thead class="bg-gray-50 border-b-2 border-gray-200">
-        <tr>
-          <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left">EXPEDIENTE</th>
-          <th class="p-3 text-sm font-semibold tracking-wide text-left">ALCANCE</th>
-          <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">INGRESO</th>
-          <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">RESOLUCIÓN</th>
-          <th class="w-32 p-3 text-sm font-semibold tracking-wide text-left">SENTINDO DE RESOLUCIÓN</th>
-        </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-100">
-            {
-                c.map(cons =>(
-                <tr class="bg-white">
-                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                    <a href="#" class="font-bold text-blue-500 hover:underline">{cons.expediente}</a>
-                </td>
-                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                    {cons.alcance}
-                </td>
-                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                <span
-                    class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">{cons.ingreso}</span>
-                </td>
-                <td class="p-3 text-sm text-green-800 whitespace-nowrap">
-                    <span
-                    class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">{cons.resolucion}</span>
-                </td>
-                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{cons.sentido_resolucion}</td>
+    <div class="mt-28 h-screen">
+        <table class="w-full">
+            <thead>
+                <tr>
+                    <th class="pt-4 pb-4">
+                        <a href="info_denuncias" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded">Denuncias -></a>
+                    </th>
                 </tr>
-                ))
-            }
-        </tbody>
-      </table>
+            </thead>
+        </table>
+        <div class="overflow-auto rounded-lg shadow hidden md:block pb-16 ml-4 mr-4">
+        <table class="w-full">
+            <thead class="bg-gray-50 border-b-2 border-gray-200">
+            <tr>
+            <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left">EXPEDIENTE</th>
+            <th class="p-3 text-sm font-semibold tracking-wide text-left">ALCANCE</th>
+            <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">INGRESO</th>
+            <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">RESOLUCIÓN</th>
+            <th class="w-32 p-3 text-sm font-semibold tracking-wide text-left">SENTINDO DE RESOLUCIÓN</th>
+            </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                {
+                    c.map(cons =>(
+                    <tr class="bg-white">
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                        <a href="#" class="font-bold text-blue-500 hover:underline">{cons.expediente}</a>
+                    </td>
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                        {cons.alcance}
+                    </td>
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                    <span
+                        class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">{cons.ingreso}</span>
+                    </td>
+                    <td class="p-3 text-sm text-green-800 whitespace-nowrap">
+                        <span
+                        class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">{cons.resolucion}</span>
+                    </td>
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{cons.sentido_resolucion}</td>
+                    </tr>
+                    ))
+                }
+            </tbody>
+        </table>
     </div>
  
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20 ml-4 mr-4">
       {
         c.map(cons =>(
             <div class="bg-white space-y-3 p-4 rounded-lg shadow">

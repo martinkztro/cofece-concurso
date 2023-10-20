@@ -10,9 +10,20 @@ const getInfo = async () => {
 };
 const c = await getInfo();
 ---
-<Layout title="Asuntos del pleno"> 
-    <div class="mt-28 p-5 h-screen">
-        <div class="overflow-auto rounded-lg shadow hidden md:block pb-16">
+<Layout title="Asuntos de Denuncias"> 
+    <div class="mt-28 h-screen">
+        <table class="w-full">
+            <thead>
+                <tr>
+                    <th class="pt-4 pb-4">
+                        <a href="info_concentraciones" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded m-2"><- Concentraciones</a>
+                        <a href="info_iebc_y_dc" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded">Iebc y Dc -></a>
+
+                    </th>
+                </tr>
+            </thead>
+        </table>
+        <div class="overflow-auto rounded-lg shadow hidden md:block pb-16 ml-4 mr-4">
           <table class="w-full">
             <thead class="bg-gray-50 border-b-2 border-gray-200">
             <tr>
