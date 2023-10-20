@@ -1,5 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+
 var ruta = "http://localhost:4321/DATOS_COFECE.json";
 const getInfo = async () => {
   const res = await fetch(ruta);
@@ -10,76 +12,92 @@ const getInfo = async () => {
 };
 const c = await getInfo();
 ---
-<Layout title="Asuntos del pleno"> 
-    <div class="mt-32 p-5 h-screen">
-        <div class="overflow-auto rounded-lg shadow hidden md:block">
-          <table class="w-full">
-            <thead class="bg-gray-50 border-b-2 border-gray-200 text-center">
-            <tr>
-              <th class="w-20 p-3 text-sm font-semibold tracking-wide ">EXPEDIENTE</th>
-              <th class="p-3 text-sm font-semibold tracking-wide ">NOMBRE CORTO</th>
-              <th class="w-24 p-3 text-sm font-semibold tracking-wide ">FECHA DE EMISIÓN</th>
-              <th class="w-24 p-3 text-sm font-semibold tracking-wide ">CONVENIO COFECE COFEMER</th>
-              <th class="w-32 p-3 text-sm font-semibold tracking-wide ">SUBSECTOR</th>
-            </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-100 text-center">
-                {
-                    c.map(cons =>(
-                    <tr class="bg-white">
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                        <a href="#" class="font-bold text-blue-500 hover:underline">{cons.expediente}</a>
-                    </td>
-                    <td class="p-3 text-sm text-center text-gray-700 whitespace-nowrap">
-                        {cons.nombre_corto}
-                    </td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                    <span
-                        class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">{cons.fecha_emision}</span>
-                    </td>
-                    <td class="p-3 text-sm text-green-800 whitespace-nowrap">
-                        <span
-                        class="p-3 text-sm text-gray-700 whitespace-nowrap text-center">{cons.convenio_Cofece_COFEMER}</span>
-                    </td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap text-center">{cons.subsector}</td>
-                    </tr>
-                    ))
-                }
-            </tbody>
-          </table>
-        </div>
-     
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+
+<Layout title="Asuntos del pleno">
+  <div class="mt-32 p-5 h-screen">
+    <div class="overflow-auto rounded-lg shadow hidden md:block">
+      <table class="w-full">
+        <thead class="bg-gray-50 border-b-2 border-gray-200 text-center">
+          <tr>
+            <th class="w-20 p-3 text-sm font-semibold tracking-wide"
+              >EXPEDIENTE</th
+            >
+            <th class="p-3 text-sm font-semibold tracking-wide">NOMBRE CORTO</th
+            >
+            <th class="w-24 p-3 text-sm font-semibold tracking-wide"
+              >FECHA DE EMISIÓN</th
+            >
+            <th class="w-24 p-3 text-sm font-semibold tracking-wide"
+              >CONVENIO COFECE COFEMER</th
+            >
+            <th class="w-32 p-3 text-sm font-semibold tracking-wide"
+              >SUBSECTOR</th
+            >
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 text-center">
           {
-            c.map(cons =>(
-                <div class="bg-white space-y-3 p-4 rounded-lg shadow">
-                    <div class="flex items-center space-x-2 text-sm">
-                        <div>
-                            <a href="#" class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">{cons.fecha_emision}</a>
-                        </div>
-                        <div class="text-gray-500">{cons.expediente}</div>
-                        <div>
-                            <span
-                            class="text-black-500 font-bold hover:underline">Anteproyecto: {cons.fecha_anteproyecto}</span>         
-                        </div>
-                    </div>
-                    <div class="text-sm text-gray-700">
-                    {cons.nombre_corto}
-                    </div>
-                    <div class="text-sm font-medium text-black">
-                        <span
-                        class="text-gray-500">Convenio: {cons.convenio_Cofece_COFEMER}</span>
-                    </div>
-                </div>
+            c.map((cons) => (
+              <tr class="bg-white">
+                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                  <a href="#" class="font-bold text-blue-500 hover:underline">
+                    {cons.expediente}
+                  </a>
+                </td>
+                <td class="p-3 text-sm text-center text-gray-700 whitespace-nowrap">
+                  {cons.nombre_corto}
+                </td>
+                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                  <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">
+                    {cons.fecha_emision}
+                  </span>
+                </td>
+                <td class="p-3 text-sm text-green-800 whitespace-nowrap">
+                  <span class="p-3 text-sm text-gray-700 whitespace-nowrap text-center">
+                    {cons.convenio_Cofece_COFEMER}
+                  </span>
+                </td>
+                <td class="p-3 text-sm text-gray-700 whitespace-nowrap text-center">
+                  {cons.subsector}
+                </td>
+              </tr>
             ))
           }
+        </tbody>
+      </table>
     </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+      {
+        c.map((cons) => (
+          <div class="bg-white space-y-3 p-4 rounded-lg shadow">
+            <div class="flex items-center space-x-2 text-sm">
+              <div>
+                <a
+                  href="#"
+                  class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50"
+                >
+                  {cons.fecha_emision}
+                </a>
+              </div>
+              <div class="text-gray-500">{cons.expediente}</div>
+              <div>
+                <span class="text-black-500 font-bold hover:underline">
+                  Anteproyecto: {cons.fecha_anteproyecto}
+                </span>
+              </div>
+            </div>
+            <div class="text-sm text-gray-700">{cons.nombre_corto}</div>
+            <div class="text-sm font-medium text-black">
+              <span class="text-gray-500">
+                Convenio: {cons.convenio_Cofece_COFEMER}
+              </span>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+</div>
+
+<Navbar selected="" textSelected="" selected2="" textSelected2="" />
 </Layout>
-<!--
-    
-    <p>{cons.fecha_anteproyecto}</p>
-    <p>{cons.fecha_emision}</p>
-    <p>{cons.expediente}</p>
-    <p>{cons.convenio_Cofece_COFEMER}</p>
-    <p>{cons.notificado_por}</p>
- -->

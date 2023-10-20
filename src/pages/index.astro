@@ -6,20 +6,24 @@ import type { Code, Debug } from 'astro:components';
 ---
 
 <Layout title="Cofece - Comisión Federal de Competencia Económica">
-	<main class="grid mt-32 gap-6 mb-24 bg-white mx-4 px-3">
-		<div class="flex items-center gap-3 mt-3 mb-3 mx-auto">
-			<a href="" class="px-3 py-1 bg-[#00a099] rounded-3xl text-white font-normal">Comunicados</a>
+	<main class="grid mt-32 gap-6 mb-24 bg-white px-6 lg:px-44 mx-auto">
+		<section class="flex items-center gap-6 mt-3 mb-3 mx-auto">
+			<a href="" class="px-3 py-1 bg-[#00C7B1] rounded-3xl text-white font-normal">Comunicados</a>
 			<a href="/discursosypresentaciones" class="font-normal">Discursos y Presentaciones</a>
-		</div>
-		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
-		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
-		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
-		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
-		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
-		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
-		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
-		<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública'/>
+		</section>
+
+		<section class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+			<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública' link="google.com"/>
+			<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública' link="google.com"/>
+			<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública' link="google.com"/>
+			<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública' link="google.com"/>
+			<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública' link="google.com"/>
+			<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública' link="google.com"/>
+			<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública' link="google.com"/>
+			<PostNoticia image='public/postExample.png' title='Titulo de nota' description='Descripcion de la noticia que aqui estará y si alguien entra sabrá un poco sobre la nota pública' link="google.com"/>
+		</section>
+		
 	</main>
 
-	<Navbar selected='props' textSelected='props' selected2='props' textSelected2='props'/>		
+	<Navbar selected='' textSelected='' selected2='' textSelected2=''/>		
 </Layout>
