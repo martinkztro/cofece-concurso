@@ -5,16 +5,16 @@ const getInfo = async () => {
   const res = await fetch(ruta);
   const data = await res.json();
   const opiniones = data.opiniones || [];
-  const elementos = opiniones.slice(0, 20);
+  const elementos = opiniones.slice(0, 15);
   return elementos;
 };
 const c = await getInfo();
 ---
 <Layout title="Asuntos del pleno"> 
-    <div class="mt-32 p-5 h-screen">
-        <div class="overflow-auto rounded-lg shadow hidden md:block">
+    <div class="mt-28 p-5 h-screen">
+        <div class="overflow-auto rounded-lg shadow hidden md:block pb-20">
           <table class="w-full">
-            <thead class="bg-gray-50 border-b-2 border-gray-200 text-center">
+            <thead class="bg-gray-50 border-b-2 border-gray-200">
             <tr>
               <th class="w-20 p-3 text-sm font-semibold tracking-wide ">EXPEDIENTE</th>
               <th class="p-3 text-sm font-semibold tracking-wide ">NOMBRE CORTO</th>
@@ -23,14 +23,14 @@ const c = await getInfo();
               <th class="w-32 p-3 text-sm font-semibold tracking-wide ">SUBSECTOR</th>
             </tr>
             </thead>
-            <tbody class="divide-y divide-gray-100 text-center">
+            <tbody class="divide-y divide-gray-100 text-start">
                 {
                     c.map(cons =>(
                     <tr class="bg-white">
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
                         <a href="#" class="font-bold text-blue-500 hover:underline">{cons.expediente}</a>
                     </td>
-                    <td class="p-3 text-sm text-center text-gray-700 whitespace-nowrap">
+                    <td class="p-3 text-sm text-start text-gray-700 whitespace-nowrap">
                         {cons.nombre_corto}
                     </td>
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
@@ -41,7 +41,7 @@ const c = await getInfo();
                         <span
                         class="p-3 text-sm text-gray-700 whitespace-nowrap text-center">{cons.convenio_Cofece_COFEMER}</span>
                     </td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap text-center">{cons.subsector}</td>
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap text-start">{cons.subsector}</td>
                     </tr>
                     ))
                 }
@@ -49,7 +49,7 @@ const c = await getInfo();
           </table>
         </div>
      
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20">
           {
             c.map(cons =>(
                 <div class="bg-white space-y-3 p-4 rounded-lg shadow">
@@ -75,11 +75,3 @@ const c = await getInfo();
           }
     </div>
 </Layout>
-<!--
-    
-    <p>{cons.fecha_anteproyecto}</p>
-    <p>{cons.fecha_emision}</p>
-    <p>{cons.expediente}</p>
-    <p>{cons.convenio_Cofece_COFEMER}</p>
-    <p>{cons.notificado_por}</p>
- -->

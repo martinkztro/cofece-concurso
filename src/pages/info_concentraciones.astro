@@ -10,15 +10,10 @@ const getInfo = async () => {
   return elementos;
 };
 const c = await getInfo();
-var color = "green";
-if(c == "Autorizada"){
-    var color = ""
-}
-/*console.log(c);*/
 ---
 <Layout title="Asuntos de Concentraciones">
-    <div class="mt-32 p-5 h-screen">
-    <div class="overflow-auto rounded-lg shadow hidden md:block">
+    <div class="mt-28 p-5 h-screen">
+    <div class="overflow-auto rounded-lg shadow hidden md:block pb-16">
       <table class="w-full">
         <thead class="bg-gray-50 border-b-2 border-gray-200">
         <tr>
@@ -55,7 +50,7 @@ if(c == "Autorizada"){
       </table>
     </div>
  
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20">
       {
         c.map(cons =>(
             <div class="bg-white space-y-3 p-4 rounded-lg shadow">
