@@ -7,16 +7,25 @@ const getInfo = async () => {
   const res = await fetch(ruta);
   const data = await res.json();
   const denuncias = data.denuncias || [];
-  const elementos = denuncias.slice(0, 15);
+  const elementos = denuncias.slice(0,50);
   return elementos;
 };
 const c = await getInfo();
 ---
 
 <Layout title="Asuntos del pleno">
-  <main class="mt-32 p-5 lg:px-44 h-screen">
+  <main class="mt-28 h-screen">
+    <table class="w-full">
+      <thead>
+          <tr>
+              <th class="pt-4 pb-4">
+                  <a href="info_concentraciones" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded m-2"><- CONCENTRACIONES</a>
+                  <a href="info_iebc_y_dc" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded">IEBC Y DC -></a>
+              </th>
+          </tr>
+      </thead>
+  </table>
     <div class="overflow-auto rounded-lg shadow hidden md:block">
-      
       <table class="w-full">
         <thead class="bg-gray-50 border-b-2 border-gray-200">
           <tr>
