@@ -1,133 +1,105 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+
 var ruta = "http://localhost:4321/DATOS_COFECE.json";
 const getInfo = async () => {
-	const res = await fetch(ruta);
-	const c = await res.json();
-	return c.investigaciones_pm_ci;
-}
+  const res = await fetch(ruta);
+  const data = await res.json();
+  const investigaciones_pm_ci = data.investigaciones_pm_ci || [];
+  const elementos = investigaciones_pm_ci.slice(0, 15);
+  return elementos;
+};
 const c = await getInfo();
 ---
+
 <Layout title="Asuntos del pleno">
-	<section class="mt-48 font-bold text-black-700">
-        <div class="hero__bienvenida">
-            <p>Bienvenido(a) al</p>
-            <h1>Panel de Investigaciones PM y CI</h1>
-        </div>
+  <main class="mt-32 p-5 h-screen">
+    <div class="overflow-auto rounded-lg shadow hidden md:block">
+      <table class="w-full">
+        <thead class="bg-gray-50 border-b-2 border-gray-200">
+          <tr>
+            <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left"
+              >EXPEDIENTE</th
+            >
+            <th class="p-3 text-sm font-semibold tracking-wide text-center"
+              >MERCADO NOMBRE CORTO</th
+            >
+            <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left"
+              >INICIO</th
+            >
+            <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left"
+              >FECHA DE RESOLUCIÓN</th
+            >
+            <th class="w-32 p-3 text-sm font-semibold tracking-wide text-left"
+              >TIPO PRACTICA</th
+            >
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          {
+            c.map((cons) => (
+              <tr class="bg-white">
+                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                  <a href="#" class="font-bold text-blue-500 hover:underline">
+                    {cons.expediente}
+                  </a>
+                </td>
+                <td class="p-3 text-sm text-center text-gray-700 whitespace-nowrap">
+                  {cons.mercado_nombre_corto}
+                </td>
+                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                  <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">
+                    {cons.inicio}
+                  </span>
+                </td>
+                <td class="p-3 text-sm text-green-800 whitespace-nowrap">
+                  <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">
+                    {cons.fecha_resolucion}
+                  </span>
+                </td>
+                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                  {cons.tipo_practica}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
 
-    </section>
- 
-    <main>
-        <section id="secc-reservaciones" class="reservaciones">
-            <div class="reservaciones__container">
-                <ul class="lista__eventos">
-						<li class="border-2 border-black">									
-							<div class="lista__titulo evento">
-								<p class="font-bold mb-5 border-b-2 border-black p-2">EXPEDIENTE</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">SENTIDO DE RESOLUCIÓN</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">TIPO_PRACTICA</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">INICIO</p>
-								<p class="font-bold mb-5 border-b-2 border-black p-2">FECHA DE RESOLUCIÓN</p>
-                                <!--<p class="font-bold mb-5 border-b-2 border-black p-2">FALTANTESXD</p>
-								-->
-                                {
-									c.map(cons => (
-										<p>{cons.expediente}</p>
-										<p>{cons.sentido_resolucion}</p>
-										<p>{cons.tipo_practica}</p>
-										<p>{cons.inicio}</p>
-										<p>{cons.fecha_resolucion}</p>
-									))
-	
-								}
-							</div>
-							
-						</li>
-					
-				</ul>
+    <main class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+      {
+        c.map((cons) => (
+          <div class="bg-white space-y-3 p-4 rounded-lg shadow">
+            <div class="flex items-center space-x-2 text-sm">
+              <div>
+                <a
+                  href="#"
+                  class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50"
+                >
+                  {cons.inicio}
+                </a>
+              </div>
+              <div class="text-gray-500">{cons.expediente}</div>
+              <div>
+                <span class="text-black-500 font-bold hover:underline">
+                  {cons.tipo_practica}
+                </span>
+              </div>
             </div>
-        </section>
+            <div class="text-sm text-gray-700">{cons.mercado_nombre_corto}</div>
+            <div class="text-sm font-medium text-black">
+              <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">
+                {cons.fecha_resolucion}
+              </span>
+            </div>
+          </div>
+        ))
+      }
     </main>
+
+</main>
+
+<Navbar selected="" textSelected="" selected2="" textSelected2="" />
 </Layout>
-
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap');
-
-* {
-    box-sizing: border-box;
-    font-family: 'Montserrat';
-    list-style: none;
-}
-body {
-    background-color: var(--verdeClaro);
-    height: 100vh;
-}
-main {
-    text-align: center;
-}
-/* HEADER */
-.header {
-    color: var(--blanco);
-
-}
-.header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .6rem .8rem;
-}
-.header__cuenta {
-    display: flex;
-    align-items: center;
-}
-.header__cuenta img {
-    width: 45px;
-
-}
-.header__logo {
-    margin-right: 5.2rem;
-}
-.header__logo span {
-    color: var(--rosa);
-}
-.header__logout img{
-    filter: invert(1);
-    margin-right: .7rem;
-    line-height: 30px;
-    cursor: pointer;
-}
-/* HERO */
-.hero {
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--blanco);
-}
-.hero__bienvenida {
-    margin: 0 auto;
-    text-align: center;
-    font-size: 25px;
-}
-.lista__eventos {
-    display: flex;
-    flex-direction: column;
-    gap: .3rem;
-    padding: 1rem;
-    margin-top: 1.5rem;
-}
-.evento {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: center;
-    color: var(--negro);
-    border-radius: 10px;
-}
-.lista__titulo {
-    color: var(--blanco);
-}
-.card {
-    background-color: var(--blanco);
-}
-
-</style>

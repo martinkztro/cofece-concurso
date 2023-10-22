@@ -1,35 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <Layout title="Asuntos del pleno">
 	<main>
-		<svg
-			class="astro-a"
-			width="495"
-			height="623"
-			
-			viewBox="0 0 495 623"
-			
-			xmlns="http://www.w3.org/2000/svg"
-			aria-hidden="true"
-		>
-			
-			<defs>
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
 		<h1 style="color: #7B7B7B;">CONOCE NUESTRO PLENO</h1>
 		
 		<hr>
@@ -83,14 +58,14 @@ import Card from '../components/Card.astro';
               <h3 class="context"style="color: black;" ><strong>Entrevistas y Agenda</h3></strong>
              <br>
               <a href="entrevistas1">
-              <button class="more" style="color: black;"><strong>Entrevistas con Brenda Hernández Ramírez</button></strong>
+              <button class="more" style="color: black;"><strong>Entrevistas con la comisionada Brenda Hernández Ramírez</button></strong>
              </a>
              <br>
               <a href="entrevistas1">
               <button class="more" style="color: black;"><strong>Agenda Pública 2021</button></strong>
              </a>
              <br>
-             <a href="entrevistas1">
+             <a href="entrevistas4">
              <button class="more" style="color: black;"><strong>Agenda Pública 2022</button></strong>
             </a>
 
@@ -103,6 +78,8 @@ import Card from '../components/Card.astro';
 		<br>
 		
     </main>
+
+	<Navbar selected="" textSelected="" selected2="" textSelected2="" />
 </Layout>
 
 <style>

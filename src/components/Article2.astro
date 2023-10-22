@@ -9,7 +9,7 @@ const { year, articles } = Astro.props;
 ---
 
 <div class="buttons-array">
-    <button class="btn-year color-green" id={`btn${year}`} data-year={year}>{year}</button>
+    <button class="btn-year bg-[#00C7B1] text-2xl" id={`btn${year}`} data-year={year}>{year}</button>
     <div class="article-content" id={`article${year}`}>
         <!-- iterate articles -->
         {articles.filter(article => article.year === year).map((article, index) => (

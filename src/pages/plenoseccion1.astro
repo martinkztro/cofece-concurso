@@ -1,112 +1,119 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <Layout title="Asuntos del pleno">
-	<main class="md:grid-cols-2">
-		<svg
-			class="astro-a"
-			width="495"
-			height="623"
-			
-			viewBox="0 0 495 623"
-			
-			xmlns="http://www.w3.org/2000/svg"
-			aria-hidden="true"
-		>
-			
-			<defs>
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
-		<h1 style="color: #7B7B7B;">CONOCE NUESTRO PLENO</h1>
-
-		<h3 class="context"style="color: #7B7B7B;" >El Pleno es el órgano de gobierno de la Comisión, encargado de resolver con plena independencia y autonomía, de forma colegiada y por mayoría de votos, los casos y asuntos que por mandato constitucional atiende.</h3>
-	    <img class="perfil" src="public/perfil.jpg" alt="">
+	<main class="mt-36 lg:px-36 px-4 mb-24">
+		<section class="mb-6">
+		<h1 style="color: #7B7B7B; font-size: 36px; margin-left:12px;">CONOCE NUESTRO PLENO</h1>
+		
+		<h3 class="md:text-2xl text-center" style="color: #7B7B7B;" >El Pleno es el órgano de gobierno de la Comisión, encargado de resolver con plena independencia y autonomía, de forma colegiada y por mayoría de votos, 
+			los casos y asuntos que por mandato constitucional atiende.</h3>
+	    
+		
+		
+	    </section>
+		<h3 class="text-center text-2xl " style="color: #7B7B7B;"><strong>Integrantes del Pleno</h3></strong>
+	    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-7">
+		
+		<article>
+		<img class="perfil" src="public/perfil1.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Andrea Marvan Saltiel</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionada presidenta</h3>
 		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
 		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
-		<button class="more" style="color: black;">Ver mas</button>
-		<hr>
-
-        <img class="perfil" src="public/perfil.jpg" alt="">
+		<a href="plenoperfil1">
+		<button class="more" style="color: black;">Ver más</button>
+	    </a>
+	    </article>
+		
+		
+        
+        
+		<article>
+        <img class="perfil" src="public/perfil2.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Alejandro Faya Rodriguez</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionado</h3>
 		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
-		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
-		<button class="more" style="color: black;">Ver mas</button>
-		<hr>
-
-        <img class="perfil" src="public/perfil.jpg" alt="">
+		<h3 class="context" style="color: #7B7B7B;">afaya@cofece.mx</h3>
+		<a href="plenoperfil2">
+			<button class="more" style="color: black;">Ver más</button>
+		</a>
+	    </article>
+		
+		
+		
+        <article>
+        <img class="perfil" src="public/perfil3.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Ana María Reséndiz Mora</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionada</h3>
-		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
-		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
-		<button class="more" style="color: black;">Ver mas</button>
-		<hr>
-        <img class="perfil" src="public/perfil.jpg" alt="">
-    	<h3 class="context" style="color: #7B7B7B;">Brenda  Gisela  Hernández Ramírez</h3>
-        <h3 class="context" style="color: #7B7B7B;">Comisionada</h3>
-		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
-		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
-		<button class="more" style="color: black;">Ver mas</button>
-		<hr>
-        <img class="perfil" src="public/perfil.jpg" alt="">
+		<h3 class="context" style="color: #7B7B7B;">2020-2029</h3>
+		<h3 class="context" style="color: #7B7B7B;">aresendiz@cofece.mx</h3>
+		<a href="plenoperfil3">
+			<button class="more" style="color: black;">Ver más</button>
+		</a>
+	    </article>
+				
+		
+		<article>
+        <img class="perfil" src="public/perfil5.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Giovanni Tapia Lezama</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionado</h3>
 		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
-		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
-		<button class="more" style="color: black;">Ver mas</button>
-		<hr>
-        <img class="perfil" src="public/perfil.jpg" alt="">
+		<h3 class="context" style="color: #7B7B7B;">gtapia@cofece.mx</h3>
+		<a href="plenoperfil5">
+			<button class="more" style="color: black;">Ver más</button>
+		</a>
+	    </article>
+		
+		
+		
+		<article>
+        <img class="perfil" src="public/perfil6.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">José Eduardo Mendoza Contreras</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionado</h3>
-		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
-		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
-		<button class="more" style="color: black;">Ver mas</button>
-		<hr>
-        <img class="perfil" src="public/perfil.jpg" alt="">
+		<h3 class="context" style="color: #7B7B7B;">2018-2027</h3>
+		<h3 class="context" style="color: #7B7B7B;">jmendoza@cofece.mx</h3>
+		<a href="plenoperfil6">
+			<button class="more" style="color: black;">Ver más</button>
+		</a>
+	    </article>
+		
+		
+		
+		<article>
+        <img class="perfil" src="public/perfil7.jpg" alt="">
     	<h3 class="context" style="color: #7B7B7B;">Rodrigo Alcázar Silva</h3>
         <h3 class="context" style="color: #7B7B7B;">Comisionado</h3>
-		<h3 class="context" style="color: #7B7B7B;">2022-2032</h3>
-		<h3 class="context" style="color: #7B7B7B;">amarvan@cofece.mx</h3>
-		<button class="more" style="color: black;">Ver mas</button>
-
-	
+		<h3 class="context" style="color: #7B7B7B;">2023-2028</h3>
+		<h3 class="context" style="color: #7B7B7B;">ralcazar@cofece.mx</h3>
+		<a href="plenoperfil7">
+			<button class="more" style="color: black;">Ver más</button>
+		</a>
+	    </article>
+		
+		
+		
+		
+	    </section>
     </main>
-</Layout>
 
+	<Navbar selected="" textSelected="" selected2="" textSelected2="" />
+</Layout>
+   
 <style>
-	main {
-		display: grid;
-		grid-template-columns: 1fr;
-		margin-top: 7rem;
-		width: 100%;
-		max-width: calc(100% - 2rem);
-		color: rgb(255, 255, 255);
-		font-size: 20px;
-		background-color: rgb(255, 255, 255);
-		line-height: 1.6;
-	}
+	
 
 	.more {
+		background-color: rgb(216, 216, 216);
 		margin: auto;
 		display: flex;
+        width: 30%;
 		justify-content: center;
 		align-items: center;
 		transition: .3s;
-		border-radius: 8%;
+		border-radius: 10px;
 	}
 
 	.more:hover{
@@ -137,10 +144,12 @@ import Layout from '../layouts/Layout.astro';
         height: 0.1em;
         border-radius:1.5rem;
         clear: both;
+		margin-left: 6%;
     }
 
     .context{
         text-align: center;
+	
     }
 
 	h1 {
@@ -181,4 +190,6 @@ import Layout from '../layouts/Layout.astro';
 		gap: 2rem;
 		padding: 0;
 	}
+
+	
 </style>

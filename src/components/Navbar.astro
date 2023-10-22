@@ -1,0 +1,111 @@
+---
+interface Props {
+    selected: string,
+    textSelected: string,
+    selected2: string,
+    textSelected2: string
+}
+
+const { selected = 'disabled', textSelected = 'disabled', selected2 = 'disabled', textSelected2 = 'disabled' } = Astro.props;
+
+---
+
+<nav class="bg-white fixed bottom-0 w-full z-50 shadow-black shadow-2xl md:hidden">
+    <div id="roulette" class="bg-white border-t-2 border-[#00C7B1] -z-50 h-28 w-52 absolute bottom-[4.36rem] rounded-t-full left-[5.8rem] opacity-0 transition-opacity duration-300">
+        <ul class="flex gap-2 items-center justify-center rounded-full">
+            <li class="flex flex-col items-center relative top-16 left-1">
+                <a href="/pleno">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="38" height="38" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333F48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                    </svg>
+                    Pleno
+                </a>
+            </li>
+            <li class="flex flex-col items-center relative top-2 left-1">
+                <a href="/informacion">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-desktop-analytics mx-auto" width="38" height="38" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333F48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 4m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z" />
+                        <path d="M7 20h10" />
+                        <path d="M9 16v4" />
+                        <path d="M15 16v4" />
+                        <path d="M9 12v-4" />
+                        <path d="M12 12v-1" />
+                        <path d="M15 12v-2" />
+                        <path d="M12 12v-1" />
+                    </svg>
+                    Información
+                </a>
+            </li>
+            <li class="flex flex-col items-center relative top-16">
+                <a href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-news mx-auto" width="38" height="38" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333F48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" />
+                        <path d="M8 8l4 0" />
+                        <path d="M8 12l4 0" />
+                        <path d="M8 16l4 0" />
+                    </svg>
+                    Prensa
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <ul class="flex justify-around gap-28 py-2 items-center">
+        <li class="flex flex-col justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class=`${selected} icon icon-tabler icon-tabler-user` width="30" height="30" viewBox="0 0 24 24" stroke-width="1.8" stroke="#333F48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+            </svg>
+            <a class=`${textSelected} text-md text-[#333F48]` href="/cuenta">Cuenta</a>
+        </li>
+        <li  class="flex flex-col justify-center items-center bg-[#00C7B1] px-4 py-2 border-[2px] border-slate-500 border-dashed shadow-md rounded-full fixed bottom-5">
+            <svg id="menu" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-category-2" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333F48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M14 4h6v6h-6z" />
+                <path d="M4 14h6v6h-6z" />
+                <path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                <path d="M7 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            </svg>
+            <svg id="close-menu" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x hidden" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333F48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M18 6l-12 12" />
+                <path d="M6 6l12 12" />
+            </svg>
+            <a class="text-md text-[#333F48] font-semibold">Menú</a>
+        </li>
+        <li class="flex flex-col justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class=`${selected2} icon icon-tabler icon-tabler-question-mark` width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333F48" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M8 8a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4" />
+                <path d="M12 19l0 .01" />
+            </svg>
+            <a class=`${textSelected2} text-md text-[#333F48]` href="/ayuda">Ayuda</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    const menu = document.getElementById('menu');
+    const closeMenu = document.getElementById('close-menu');
+    const roulette = document.getElementById('roulette');
+
+    menu.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        closeMenu.classList.toggle('hidden');
+        roulette.classList.toggle('opacity-0');
+    });
+
+    closeMenu.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        closeMenu.classList.toggle('hidden');
+        roulette.classList.toggle('opacity-0');
+    });
+  
+</script>
