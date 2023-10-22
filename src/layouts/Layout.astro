@@ -32,18 +32,6 @@ const { title } = Astro.props;
 					</ul>
 				</nav>
 				<div class="flex justify-evenly items-center md:justify-end md:gap-3 ">
-					<svg id="filterButton" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments md:hidden" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="#333F48" fill="none" stroke-linecap="butt" stroke-linejoin="round">
-						<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-						<path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-						<path d="M6 4v4" />
-						<path d="M6 12v8" />
-						<path d="M10 16a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-						<path d="M12 4v10" />
-						<path d="M12 18v2" />
-						<path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-						<path d="M18 4v1" />
-						<path d="M18 9v11" />
-					</svg>
 					<div class="flex justify-center gap-3 py-3">
 						<input class="rounded-xl px-2 py-1 bg-[#333f4810] border-[1px] border-slate-300 md:w-80" type="search" placeholder="Ingrese su búsqueda" name="search">
 						<button class="bg-[#00C7B1] px-6 rounded-2xl shadow-md" type="submit">
@@ -79,15 +67,3 @@ const { title } = Astro.props;
 		
 	</body>
 </html>
-
-<script>
-	const filterBtn = document.getElementById('filterButton');
-
-
-	filterBtn.addEventListener('click', () => {
-		const filterMenu = document.getElementById('filterMenu');
-		filterMenu.classList.toggle('hidden');
-
-	})
-
-</script>

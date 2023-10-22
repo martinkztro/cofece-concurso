@@ -12,57 +12,41 @@ const getInfo = async () => {
 };
 const c = await getInfo();
 ---
-<Layout title="Asuntos de Denuncias"> 
-    <div class="mt-28 h-screen">
-        <table class="w-full">
-            <thead>
-                <tr>
-                    <th class="pt-4 pb-4">
-                        <a href="info_concentraciones" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded m-2"><- Concentraciones</a>
-                        <a href="info_iebc_y_dc" class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-4 rounded">Iebc y Dc -></a>
 
-                    </th>
-                </tr>
-            </thead>
-        </table>
-        <div class="overflow-auto rounded-lg shadow hidden md:block pb-16 ml-4 mr-4">
-          <table class="w-full">
-            <thead class="bg-gray-50 border-b-2 border-gray-200">
-            <tr>
-              <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left">EXPEDIENTE</th>
-              <th class="p-3 text-sm font-semibold tracking-wide text-center">RESULTADO</th>
-              <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">INGRESO</th>
-              <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">FIN</th>
-              <th class="w-32 p-3 text-sm font-semibold tracking-wide text-left">DG</th>
-            </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-100">
-                {
-                    c.map(cons =>(
-                    <tr class="bg-white">
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                        <a href="#" class="font-bold text-blue-500 hover:underline">{cons.expediente}</a>
-                    </td>
-                    <td class="p-3 text-sm text-center text-gray-700 whitespace-nowrap">
-                        {cons.resultado}
-                    </td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                    <span
-                        class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">{cons.ingreso}</span>
-                    </td>
-                    <td class="p-3 text-sm text-green-800 whitespace-nowrap">
-                        <span
-                        class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">{cons.fin}</span>
-                    </td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{cons.dg}</td>
-                    </tr>
-                    ))
-                }
-            </tbody>
-          </table>
-        </div>
-     
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20">
+<Layout title="Asuntos del pleno">
+  <main class="mt-28 h-screen md:px-40">
+    <table class="w-full">
+      <thead>
+          <tr>
+              <th class="pt-4 pb-4 flex items-center justify-between">
+                  <a href="info_concentraciones" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded m-2"><- CONCENTRACIONES</a>
+                  <a href="info_iebc_y_dc" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded">IEBC Y DC -></a>
+              </th>
+          </tr>
+      </thead>
+  </table>
+    <div class="overflow-auto rounded-lg shadow hidden md:block">
+      <table class="w-full">
+        <thead class="bg-gray-50 border-b-2 border-gray-200">
+          <tr>
+            <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left"
+              >EXPEDIENTE</th
+            >
+            <th class="p-3 text-sm font-semibold tracking-wide text-center"
+              >RESULTADO</th
+            >
+            <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left"
+              >INGRESO</th
+            >
+            <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left"
+              >FIN</th
+            >
+            <th class="w-32 p-3 text-sm font-semibold tracking-wide text-left"
+              >DG</th
+            >
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
           {
             c.map((cons) => (
               <tr class="bg-white">
