@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
+import TableButton from "../components/TableButton.astro";
 const ruta = "http://localhost:4321/datos_cofece.json";
 
 const getInfo = async () => {
@@ -19,6 +20,9 @@ const c = await getInfo();
             <thead>
                 <tr>
                     <th class="pt-4 pb-4 flex md:px-4 items-center justify-end">
+                      <TableButton
+                      width={40}
+                    />
                         <a href="info_denuncias" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded">DENUNCIAS -></a>
                     </th>
                 </tr>
