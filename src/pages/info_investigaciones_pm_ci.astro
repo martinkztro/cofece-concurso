@@ -1,39 +1,39 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
-import TableButton from "../components/TableButton.astro";
-const ruta = "http://localhost:4321/datos_cofece.json";
 
+var ruta = "http://localhost:4321/DATOS_COFECE.json";
 const getInfo = async () => {
   const res = await fetch(ruta);
   const data = await res.json();
-  const concentraciones = data.concentraciones || [];
-  const elementos = concentraciones.slice(0, 50);
+  const investigaciones_pm_ci = data.investigaciones_pm_ci || [];
+  const elementos = investigaciones_pm_ci.slice(0, 50);
   return elementos;
 };
 const c = await getInfo();
 ---
 
-<Layout title="Asuntos de Concentraciones">
+<Layout title="Asuntos de Pm-Ci">
     <div class="mt-28 h-screen md:px-40">
         <table class="w-full">
             <thead>
                 <tr>
-                    <th class="pt-4 pb-4 flex md:px-4 items-center justify-end">
-                        <a href="info_denuncias" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded">DENUNCIAS -></a>
+                    <th class="pt-4 pb-4 flex items-center justify-between px-4">
+                        <a href="info_iebc_y_dc" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded m-2"><- IEBC Y DC</a>
+                        <a href="info_opiniones" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded">OPINIONES -></a>
                     </th>
                 </tr>
             </thead>
         </table>
-        <div class="overflow-auto rounded-lg shadow hidden md:block pb-16 ml-4 mr-4">
-        <table class="w-full">
+        <div class="overflow-auto rounded-lg shadow hidden md:block pb-20 ml-4 mr-4">
+          <table class="w-full">
             <thead class="bg-gray-50 border-b-2 border-gray-200">
             <tr>
-            <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left">EXPEDIENTE</th>
-            <th class="p-3 text-sm font-semibold tracking-wide text-left">ALCANCE</th>
-            <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">INGRESO</th>
-            <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">RESOLUCIÓN</th>
-            <th class="w-32 p-3 text-sm font-semibold tracking-wide text-left">SENTINDO DE RESOLUCIÓN</th>
+              <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left">EXPEDIENTE</th>
+              <th class="p-3 text-sm font-semibold tracking-wide text-center">MERCADO NOMBRE CORTO</th>
+              <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">INICIO</th>
+              <th class="w-24 p-3 text-sm font-semibold tracking-wide text-left">FECHA DE RESOLUCIÓN</th>
+              <th class="w-32 p-3 text-sm font-semibold tracking-wide text-left">TIPO PRACTICA</th>
             </tr>
             </thead>
             <tbody class="divide-y divide-gray-100">
@@ -43,25 +43,25 @@ const c = await getInfo();
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
                         <a href="#" class="font-bold text-blue-500 hover:underline">{cons.expediente}</a>
                     </td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                        {cons.alcance}
+                    <td class="p-3 text-sm text-center text-gray-700 whitespace-nowrap">
+                        {cons.mercado_nombre_corto}
                     </td>
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
                     <span
-                        class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">{cons.ingreso}</span>
+                        class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">{cons.inicio}</span>
                     </td>
                     <td class="p-3 text-sm text-green-800 whitespace-nowrap">
                         <span
-                        class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">{cons.resolucion}</span>
+                        class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">{cons.fecha_resolucion}</span>
                     </td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{cons.sentido_resolucion}</td>
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{cons.tipo_practica}</td>
                     </tr>
                     ))
                 }
             </tbody>
-        </table>
-    </div>
- 
+          </table>
+        </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20 ml-4 mr-4">
       {
         c.map((cons) => (
@@ -72,25 +72,26 @@ const c = await getInfo();
                   href="#"
                   class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50"
                 >
-                  {cons.ingreso}
+                  {cons.inicio}
                 </a>
               </div>
               <div class="text-gray-500">{cons.expediente}</div>
               <div>
-                <spanp class="text-slate-600 font-bold hover:underline">
-                  {cons.sentido_resolucion}
-                </spanp>
+                <span class="text-black-500 font-bold hover:underline">
+                  {cons.tipo_practica}
+                </span>
               </div>
             </div>
-            <div class="text-sm text-gray-700">{cons.alcance}</div>
+            <div class="text-sm text-gray-700">{cons.mercado_nombre_corto}</div>
             <div class="text-sm font-medium text-black">
               <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50">
-                {cons.resolucion}
+                {cons.fecha_resolucion}
               </span>
             </div>
           </div>
         ))
       }
     </div>
+
 <Navbar selected="" textSelected="" selected2="" textSelected2="" />
 </Layout>

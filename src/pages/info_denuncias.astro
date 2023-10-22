@@ -1,20 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
+import TableButton from "../components/TableButton.astro";
 
 var ruta = "http://localhost:4321/DATOS_COFECE.json";
 const getInfo = async () => {
   const res = await fetch(ruta);
   const data = await res.json();
   const denuncias = data.denuncias || [];
-  const elementos = denuncias.slice(0, 15);
+  const elementos = denuncias.slice(0,50);
   return elementos;
 };
 const c = await getInfo();
 ---
 
 <Layout title="Asuntos del pleno">
-  <main class="mt-32 p-5 h-screen">
+  <main class="mt-28 h-screen md:px-40">
+    <table class="w-full">
+      <thead>
+          <tr>
+              <th class="pt-4 pb-4 flex items-center justify-between">
+                  <a href="info_concentraciones" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded m-2"><- CONCENTRACIONES</a>
+                  <a href="info_iebc_y_dc" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded">IEBC Y DC -></a>
+              </th>
+          </tr>
+      </thead>
+  </table>
     <div class="overflow-auto rounded-lg shadow hidden md:block">
       <table class="w-full">
         <thead class="bg-gray-50 border-b-2 border-gray-200">
@@ -68,7 +79,7 @@ const c = await getInfo();
       </table>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20 ml-4 mr-4">
       {
         c.map((cons) => (
           <div class="bg-white space-y-3 p-4 rounded-lg shadow">
@@ -98,8 +109,6 @@ const c = await getInfo();
         ))
       }
     </div>
-
-</main>
 
 <Navbar selected="" textSelected="" selected2="" textSelected2="" />
 </Layout>
