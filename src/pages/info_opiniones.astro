@@ -7,7 +7,7 @@ const getInfo = async () => {
   const res = await fetch(ruta);
   const data = await res.json();
   const opiniones = data.opiniones || [];
-  const elementos = opiniones.slice(0, 15);
+  const elementos = opiniones.slice(0, 50);
   return elementos;
 };
 const c = await getInfo();
@@ -61,39 +61,7 @@ const c = await getInfo();
           </table>
         </div>
      
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20">
-          {
-            c.map((cons) => (
-              <tr class="bg-white">
-                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                  <a href="#" class="font-bold text-blue-500 hover:underline">
-                    {cons.expediente}
-                  </a>
-                </td>
-                <td class="p-3 text-sm text-center text-gray-700 whitespace-nowrap">
-                  {cons.nombre_corto}
-                </td>
-                <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                  <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">
-                    {cons.fecha_emision}
-                  </span>
-                </td>
-                <td class="p-3 text-sm text-green-800 whitespace-nowrap">
-                  <span class="p-3 text-sm text-gray-700 whitespace-nowrap text-center">
-                    {cons.convenio_Cofece_COFEMER}
-                  </span>
-                </td>
-                <td class="p-3 text-sm text-gray-700 whitespace-nowrap text-center">
-                  {cons.subsector}
-                </td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden pb-20 ml-4 mr-4">
       {
         c.map((cons) => (
           <div class="bg-white space-y-3 p-4 rounded-lg shadow">
