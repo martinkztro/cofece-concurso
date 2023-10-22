@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar.astro';
 <Layout title="Asuntos del pleno">
 	<main class="mt-36 lg:px-36 px-4 mb-24">
 		<section class="mb-6">
-		<h1 style="color: #7B7B7B; font-size: 36px; margin-left:12px;">MI CUENTA</h1>
+		<h1 style="color: #7B7B7B; font-size: 36px; margin-left:12px;">CUENTA DESTACADA</h1>
 		
 		<h3 class="md:text-2xl text-center" style="color: #7B7B7B;" >Regístrate al boletin informativo de Cofece</h3>
 	    
@@ -20,36 +20,37 @@ import Navbar from '../components/Navbar.astro';
         <h3 class="md:text-2xl text-center" style="color: #7B7B7B;" >¿Que información te gustaria recibir? </h3>
            <br>
      
-        <table class="md:text-2xl text-center" >
+        <table style="margin: auto;">
             <thead >
                 <tr>
                     <th>Secciones</th>
-                    <th>Notificación de correo</th>
-                    <th>Notificación web</th>
+                    <th>Correo</th>
+                    <th>Web</th>
                 </tr>
             </thead>
             <tbody >
-                <tr>
+                <tr class="text-center">
                     <td>Comunicados</td>
                     <td><input type="checkbox" name="comunidados" class="email"></td>
                     <td><input type="checkbox" name="comunidados" class="web"></td>
                 </tr>
-                <tr>
+                <hr>
+                <tr class="text-center">
                     <td>Discursos y presentaciones</td>
                     <td><input type="checkbox" name="discursosypresentaciones" class="email"></td>
                     <td><input type="checkbox" name="discursosypresentaciones" class="web"></td>
                 </tr>
-                <tr>
+                <tr class="text-center">
                     <td>Asuntos por resolver</td>
                     <td><input type="checkbox" name="asuntosporresolver" class="email"></td>
                     <td><input type="checkbox" name="asuntosporresolver" class="web"></td>
                 </tr>
-                <tr>
+                <tr class="text-center">
                     <td>Asuntos resueltos</td>
                     <td><input type="checkbox" name="asuntosresueltos" class="email"></td>
                     <td><input type="checkbox" name="asuntosresueltos" class="web"></td>
                 </tr>
-                <tr>
+                <tr class="text-center">
                     <td>Información</td>
                     <td><input type="checkbox" name="informacion" class="email"></td>
                     <td><input type="checkbox" name="informacion" class="web"></td>
