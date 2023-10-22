@@ -11,7 +11,7 @@ const { selected = 'disabled', textSelected = 'disabled', selected2 = 'disabled'
 ---
 
 <nav class="bg-white fixed bottom-0 w-full z-50 shadow-black shadow-2xl md:hidden">
-    <div id="roulette" class="bg-white border-t-2 border-[#00C7B1] -z-50 h-28 w-52 absolute bottom-[4.36rem] rounded-t-full left-[5.8rem] opacity-0 transition-opacity duration-300">
+    <div id="roulette" class="bg-white border-t-2 border-[#00C7B1] -z-50 h-28 w-52 absolute bottom-[4.36rem]  rounded-t-full left-[5.8rem] invisible">
         <ul class="flex gap-2 items-center justify-center rounded-full">
             <li class="flex flex-col items-center relative top-16 left-1">
                 <a href="/pleno">
@@ -99,13 +99,13 @@ const { selected = 'disabled', textSelected = 'disabled', selected2 = 'disabled'
     menu.addEventListener('click', () => {
         menu.classList.toggle('hidden');
         closeMenu.classList.toggle('hidden');
-        roulette.classList.toggle('opacity-0');
+        roulette.classList.toggle('invisible');
     });
 
     closeMenu.addEventListener('click', () => {
         menu.classList.toggle('hidden');
         closeMenu.classList.toggle('hidden');
-        roulette.classList.toggle('opacity-0');
+        roulette.classList.toggle('invisible');
     });
   
 </script>
