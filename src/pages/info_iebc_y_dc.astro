@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import TableButton from "../components/TableButton.astro";
 
-var ruta = "http://localhost:4321/DATOS_COFECE.json";
+var ruta = "/DATOS_COFECE.json";
 const getInfo = async () => {
   const res = await fetch(ruta);
   const data = await res.json();

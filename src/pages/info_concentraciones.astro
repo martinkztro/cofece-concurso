@@ -2,8 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import TableButton from "../components/TableButton.astro";
-const ruta = "http://localhost:4321/datos_cofece.json";
 
+const ruta = "/datos_cofece.json";
 const getInfo = async () => {
   const res = await fetch(ruta);
   const data = await res.json();
