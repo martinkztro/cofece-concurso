@@ -28,7 +28,7 @@
     display: grid;
     grid-template-areas:
     'header header header header header header'
-    'main main main main right right'
+    'main main main main right main'
     'footer footer footer footer footer footer';
     gap: 10px;
     padding: 10px;
@@ -51,10 +51,6 @@ grid-template-areas:
     'footer';
     grid-template-columns: 1fr; /* Double-check: Make single column */
 }
-}
-
-ul {
-    list-style-type: disc;
 }
 
 ol {
