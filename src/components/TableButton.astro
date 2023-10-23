@@ -5,76 +5,85 @@ interface Props {
 
 const { width } = Astro.props;
 ---
-
-<style>
-/* Popup container*/
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Popup */
-.popup .popuptext {
-  visibility: hidden;
-  width: 300px; 
-  background-color: #fff;
-  color: #000;
-  text-align: left; 
-  border: 1px solid #555;
-  border-radius: 6px;
-  padding: 8px;
-  position: absolute;
-  z-index: 1;
-  top: 100%; 
-  left: 50%;
-  margin-left: -100px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  font-size: 12px;
-  opacity: 0; 
-  transition: visibility 0s, opacity 0.5s linear;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-/* hide/show */
-.popup:hover .popuptext {
-  visibility: visible;
-  opacity: 1;
-}
-
-</style>
-<body>
-<div class="popup">
+<main>
+<section class="popup">
   <img id="tablebutton" width={width} src="public/tablebutton.png" alt="Table Button Image">
   <span class="popuptext" id="myPopup">
     <strong>Glosario:</strong>
     <ul>
-      <li>PM = Practica Monopólica.</li>
-      <li>CI = Concentración Ilícita.</li>
-      <li>IEBC = Insumos Esenciales y Barreras a la Competencia.</li>
-      <li>DC = Declaratoria.</li>
-      <li>cnt = concentración.</li>
-      <li>opn = opinion.</li>
-      <li>de = denuncia.</li>
-      <li>io = investigación de oficio.</li>
+      <li>PM = <span> Practica Monopólica.</span></li>
+      <li>CI = <span> Concentración Ilícita.</span></li>
+      <li>IEBC = <span> Insumos Esenciales y Barreras a la Competencia.</span></li>
+      <li>DC = <span> Declaratoria.</span></li>
+      <li>cnt = <span> Concentración.</span></li>
+      <li>opn = <span> Opinion.</span></li>
+      <li>de = <span> Denuncia.</span></li>
+      <li>io = <span> Investigación de oficio.</span></li>
     </ul>
   </span>
-</div>
+</section>
 
-</body>
-</html>
+</main>
+
+
+<style>
+  /* Popup container*/
+  .popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Popup */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 300px; 
+    background-color: #fff;
+    color: #000;
+    text-align: left; 
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 60%; 
+    right: 60%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-size: 12px;
+    opacity: 0; 
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* hide/show */
+  .popup:hover .popuptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  li {
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  
+  li span {
+    font-weight: normal;
+    text-transform: capitalize;
+  }
+  
+  </style>

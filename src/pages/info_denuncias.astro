@@ -15,12 +15,16 @@ const c = await getInfo();
 ---
 
 <Layout title="Asuntos del pleno">
+  <figure class="fixed right-4 bottom-4 ">
+    <TableButton width={50}/>
+  </figure>
   <main class="mt-28 h-screen md:px-40">
     <table class="w-full">
       <thead>
           <tr>
-              <th class="pt-4 pb-4 flex items-center justify-between">
+              <th class="pt-4 pb-4 px-2 flex items-center justify-between">
                   <a href="info_concentraciones" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded m-2"><- CONCENTRACIONES</a>
+                  <h1 class="text-3xl font-bold text-center hidden md:block">DENUNCIAS</h1>  
                   <a href="info_iebc_y_dc" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded">IEBC Y DC -></a>
               </th>
           </tr>

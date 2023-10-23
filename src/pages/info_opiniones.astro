@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
+import TableButton from "../components/TableButton.astro";
 
 var ruta = "http://localhost:4321/DATOS_COFECE.json";
 const getInfo = async () => {
@@ -14,25 +15,30 @@ const c = await getInfo();
 ---
 
 <Layout title="Asuntos de Opiniones"> 
+  <figure class="fixed right-4 bottom-4 ">
+    <TableButton width={50}/>
+  </figure>
     <div class="mt-28 h-screen md:px-40">
         <table class="w-full">
             <thead>
                 <tr>
-                    <th class="pt-4 pb-4 flex items-center justify-start px-4">
-                        <a href="info_investigaciones_pm_ci" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded"><- PM-CI </a>
+                    <th class="pt-4 pb-4 flex items-center justify-between px-4">
+                      <a href="info_investigaciones_pm_ci" class="bg-[#00C7B1] hover:bg-[#39948a] text-white py-1 px-4 rounded"><- PM-CI </a>
+                      <h1 class="text-3xl font-bold text-center hidden md:block">OPINIONES</h1>  
+                      <figure></figure>
                     </th>
                 </tr>
             </thead>
         </table>
         <div class="overflow-auto rounded-lg shadow hidden md:block pb-20 ml-4 mr-8">
           <table class="w-full">
-            <thead class="bg-gray-50 border-b-2 border-gray-200">
+            <thead class="bg-[#00c7b02c] border-b-2 border-gray-200">
             <tr>
               <th class="w-20 p-3 text-sm font-semibold tracking-wide ">EXPEDIENTE</th>
-              <th class="p-3 text-sm font-semibold tracking-wide ">NOMBRE CORTO</th>
+              <th class="p-2 text-sm font-semibold tracking-wide ">NOMBRE CORTO</th>
               <th class="w-24 p-3 text-sm font-semibold tracking-wide ">FECHA DE EMISIÓN</th>
               <th class="w-24 p-3 text-sm font-semibold tracking-wide ">CONVENIO COFECE COFEMER</th>
-              <th class="w-32 p-3 text-sm font-semibold tracking-wide ">SUBSECTOR</th>
+              <th class="w-32 p-3 text-sm font-semibold tracking-wide ">SECTOR</th>
             </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 text-start">
@@ -43,7 +49,7 @@ const c = await getInfo();
                         <a href="#" class="font-bold text-blue-500 hover:underline">{cons.expediente}</a>
                     </td>
                     <td class="p-3 text-sm text-start text-gray-700 whitespace-nowrap">
-                        {cons.nombre_corto}
+                        {cons.nombre_anteproyecto_documento}
                     </td>
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
                     <span
@@ -53,7 +59,7 @@ const c = await getInfo();
                         <span
                         class="p-3 text-sm text-gray-700 whitespace-nowrap text-center">{cons.convenio_Cofece_COFEMER}</span>
                     </td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap text-start">{cons.subsector}</td>
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap text-start">{cons.sector}</td>
                     </tr>
                     ))
                 }
@@ -81,7 +87,7 @@ const c = await getInfo();
                 </span>
               </div>
             </div>
-            <div class="text-sm text-gray-700">{cons.nombre_corto}</div>
+            <div class="text-sm text-gray-700">{cons.nombre_anteproyecto_documento}</div>
             <div class="text-sm font-medium text-black">
               <span class="text-gray-500">
                 Convenio: {cons.convenio_Cofece_COFEMER}

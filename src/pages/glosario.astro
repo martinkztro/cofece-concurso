@@ -1,0 +1,19 @@
+---
+import '../Styles/stylesAyuda.css'; 
+import Layout from '../layouts/Layout.astro';
+import FrequentQuestions from '../components/FrequentQuestions.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<Layout title="Cofece - Ayuda">
+    <main class="grid my-36 gap-2 lg:px-40 bg-white">
+		<section class="flex items-center gap-6 mx-auto">
+			<a href="/ayuda" class="font-normal">Preguntas Frecuentes</a>
+			<a href="/glosario" class="px-3 py-1 bg-[#00C7B1] rounded-3xl text-white font-normal">Glosario</a>
+		</section>
+        <section class="mt-4">
+
+        </section>
+    </main>
+    <Navbar  selected='' textSelected='' selected2='bg-[#00c7b058] w-14 h-8 rounded-2xl' textSelected2='font-black'/>
+</Layout>
