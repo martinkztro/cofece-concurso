@@ -1,0 +1,78 @@
+---
+// This test ver tries to implement an astro component that receives question and answer
+import '../Styles/stylesAyuda.css'; 
+import Layout from '../layouts/Layout.astro';
+import FrequentQuestions from '../components/FrequentQuestions.astro';
+import Navbar from '../components/Navbar.astro';
+
+const qnaData = [
+    {
+        question: "¿Cómo puedo entrar a trabajar en la Cofece?",
+        answer: "Puedes consultar la bolsa de trabajo en el sitio web de la Cofece. Todas nuestras convocatorias son públicas y abiertas.",
+    },
+    {
+        question: "¿Cuál es la diferencia entre el trabajo que realiza la Cofece y el Instituto Federal de Telecomunicaciones (IFT)?",
+        answer: "La Cofece promueve, protege y garantiza la competencia en todos los mercados, con excepción de los de radiodifusión y telecomunicaciones que son atribución exclusiva del IFT.",
+    },
+    {
+        question: "¿Cuál es la diferencia entre el trabajo que realiza la Cofece y la Procuraduría Federal del Consumidor (PROFECO)?",
+        answer: "La Cofece vigila y promueve que las empresas compitan entre sí para que exista mayor variedad, más calidad y mejores precios de los bienes y servicios en los mercados. <br>Por su parte, la PROFECO revisa que los proveedores y empresas no abusen de los consumidores cuando les venden sus productos y servicios.",
+    },
+    {
+        question: "¿Por qué la Comisión no sanciona a las empresas grandes y a los monopolios?",
+        answer: "La Cofece no sanciona el tamaño de las empresas, sino a aquellas que abusan de su poder de mercado para desplazar o impedir la entrada de competidores, o los acuerdos que pudieran hacer para, por ejemplo, manipular precios, repartirse el mercado, restringir la oferta o ponerse de acuerdo en las licitaciones públicas.",
+    },
+    {
+        question: "¿Qué es una práctica monopólica?",
+        answer: "Son conductas que realizan las empresas, profesionistas, comerciantes, negocios y personas para impedir o dañar el proceso de competencia. La ley en la materia las divide en tres tipos de conductas: <br><b>Prácticas monopólicas absolutas:</b> también se les conoce como colusiones o cárteles económicos. Ocurren cuando las empresas en lugar de competir se ponen de acuerdo para imponer precios, manipular la oferta o demanda de los bienes o servicios que ofrecen, repartirse o segmentarse el mercado o para coordinarse en los procesos de compra que hace el gobierno. <br><b>Prácticas monopólicas relativas:</b> estas ocurren cuando las empresas que dominan un mercado usan este poder para, indebidamente, impedir que otras entren o para sacar a las que le hacen competencia, y con ello generan un daño a los consumidores, como incremento en los precios o una reducción en la oferta de bienes o servicios. <br><b>Concentraciones ilícitas:</b> ocurren cuando dos o más empresas se unen con el objeto de obtener el poder de mercado que les permita sacar o impedir la entrada de otros competidores y con ello determinar precios, reducir la calidad de los bienes o servicios que ofrecen o la oferta de los mismo, dañando así el interés de los consumidores.",
+    },
+    {
+        question: "¿Cómo puedo denunciar una práctica monopólica?",
+        answer: "Cualquier persona puede denunciar prácticas monopólicas o concentraciones ilícitas, ante la Autoridad Investigadora de la Cofece. Para ello debe presentar un escrito de denuncia, con los requisitos que establece la Ley Federal de Competencia Económica (LFCE), ante la Oficialía de Partes de la Comisión. <br>También puedes reportar una práctica anticompetitiva, incluso de manera anónima, a través de nuestro sitio web. <br>O, de ser el caso, reportar un obstáculo regulatorio que te impida competir.",
+    },
+    {
+        question: "Si vivo en otra localidad distinta a la Ciudad de México, ¿qué puedo hacer para presentar una denuncia por prácticas monopólicas?",
+        answer: "Si vives en alguna otra ciudad, puedes presentar tu denuncia por prácticas monopólicas o concentraciones ilícitas en las delegaciones de la PROFECO. También puede usar el buzón de reporte de prácticas anticompetitivas.",
+    },
+    {
+        question: "¿Qué hace la Cofece con las multas que impone a los agentes económicos?",
+        answer: "Los recursos recaudados provenientes de las multas que impone la Cofece son cobrados por la Tesorería de la Federación, autoridad que está facultada para disponer y administrar dichos recursos.",
+    },
+    {
+        question: "¿Cuánto tiempo dura el cargo de Comisionado y cuál es el proceso de elección?",
+        answer: "La duración del cargo de un Comisionado es de 9 años. <br>Para que una persona sea Comisionado o Comisionada de la Cofece, debe acreditar experiencia y un perfil técnico establecidos en la LFCE. Además, tendrá que postularse y competir con otros aspirantes a este cargo, en un concurso convocado por un Comité de Evaluación en el que participan los titulares del Banco de México y el Instituto Nacional de Estadística y Geografía.",
+    },
+    {
+        question: "¿Cuánto tarda una investigación de la Cofece?",
+        answer: "Esta etapa no puede ser inferior a 30 ni exceder 120 días hábiles, periodo que puede ampliarse hasta en 4 ocasiones, cada una con el mismo número de días. <br>Concluida la investigación, la Autoridad Investigadora tiene un plazo no mayor a 60 días para presentar al Pleno un dictamen en el que proponga ya sea el cierre del expediente o el inicio del procedimiento seguido en forma de juicio. <br>Recibido dicho dictamen, el Pleno tiene 30 días para decretar el cierre u ordenar el emplazamiento de quienes posiblemente infringieron la LFCE para que se defiendan en un procedimiento seguido en forma de juicio.",
+    },
+    {
+        question: "¿Qué pasa después de que concluye la investigación?",
+        answer: "<b>Inicia un Procedimiento seguido en forma de juicio.</b> <br>Durante esta etapa los agentes económicos a los que se les imputa una práctica contraria a la LFCE tienen oportunidad de formular una defensa en contra de las conclusiones a las que llegó la Autoridad Investigadora, por lo que el tiempo que lleve esta dependerá de la cantidad de manifestaciones presentadas por las partes <br><b>Resolución.</b> <br>Concluido el procedimiento seguido en forma de juicio, el Pleno de la Cofece podrá: <br>Cerrar el expediente en caso de que no existan elementos para determinar la responsabilidad de los agentes económicos emplazados. <br>Sancionar al agente económico en caso de que se considere que existen elementos suficientes para determinar la responsabilidad de los agentes económicos.",
+    },
+    {
+        question: "¿A cuánto pueden ascender las sanciones que impone la Cofece?",
+        answer: "La Cofece puede imponer multas o medidas de apremio por diversas conductas o faltas a la ley de competencia. Las más fuertes son de hasta 10% de sus ingresos a quienes se coluden para imponer precios, manipular la oferta o demanda de los bienes o servicios que ofrecen, repartirse o segmentarse el mercado o para coordinarse en los procesos de compra que hace el gobierno, y de 8% para los que abusan de su poder de mercado para dañar la competencia o cometen una concentración ilícita. <br>Puedes consultar las sanciones y medidas de apremio que puede imponer la Cofece en los artículos 126 y 127 de la Ley Federal de Competencia Económica",
+    },
+    {
+        question: "¿Dónde puedo checar las multas o resoluciones que emite la Cofece?",
+        answer: "Consulta la sección Resoluciones y Opiniones. Y si quieres mantenerte al tanto de los hechos más relevantes de la Comisión visita nuestra sección Sala de Prensa, el Reporte Mensual o nuestros Informes Trimestrales.",
+    },
+  ]
+---
+
+<Layout title="Cofece - Ayuda">
+    <main class="grid my-36 gap-2 lg:px-40 bg-white">
+		<section class="flex items-center gap-6 mx-auto">
+			<a href="/" class="font-normal">Comunicados</a>
+			<a href="/discursosypresentaciones" class="px-3 py-1 bg-[#00C7B1] rounded-3xl text-white font-normal">Discursos y Presentaciones</a>
+		</section>
+        <section class="mt-4">
+    
+            <FrequentQuestions qnaArray={qnaData} />
+        </section>
+    </main>
+    <Navbar  selected='' textSelected='' selected2='' textSelected2=''/>
+</Layout>
+<script>
+</script>

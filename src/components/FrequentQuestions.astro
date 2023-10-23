@@ -1,0 +1,53 @@
+---
+interface Props {
+    qnaArray?: Array<{ question: string; answer: string; }>;
+}
+
+const { qnaArray } = Astro.props;
+---
+
+<div class="buttons-array">
+    {qnaArray.map((qna, index) => (
+        <div>
+            <button class="btn-year bg-[#00C7B1] text-2xl" id={`btnQ${index}`} data-index={index}>{qna.question}</button>
+            <div class="article-details" id={`faq${index}`} style="display: none;">
+                <div class="article-answer">{qna.answer}</div>
+            </div>
+        </div>
+    ))}
+</div>
+
+<script>
+    // Get HTML element
+    const buttons = document.querySelectorAll('button.btn-year');
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const index = parseInt(button.getAttribute('data-index'), 10);
+            const faq = document.querySelector(`.article-details#faq${index}`);
+            displayFAQ(faq);
+        });
+    });
+
+    // Toggle answer
+    function displayFAQ(faq) {
+        if (faq) {
+            if (faq.style.display === 'none') {
+                faq.style.display = 'block';
+            } else {
+                faq.style.display = 'none';
+            }
+            console.log(`Is FAQ hidden? ${faq.style.display === 'none'}`);
+        } else {
+            console.log("ERROR: Pregunta no encontrada");
+        }
+    }
+
+    // Test enable HTML tags with innerHTML
+    window.onload = function() {
+        const answers = document.querySelectorAll('.article-answer');
+        answers.forEach(answer => {
+            answer.innerHTML = answer.textContent;
+        });
+    }
+</script>
