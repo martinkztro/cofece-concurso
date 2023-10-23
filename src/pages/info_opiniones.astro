@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import TableButton from "../components/TableButton.astro";
 
-var ruta = "datos_cofece.json";
+var ruta = "http://localhost:4321/datos_cofece.json";
 const getInfo = async () => {
   const res = await fetch(ruta);
   const data = await res.json();
@@ -32,7 +32,7 @@ const c = await getInfo();
         </table>
         <div class="overflow-auto rounded-lg shadow hidden md:block pb-20 ml-4 mr-8">
           <table class="w-full">
-            <thead class="bg-[#00c7b02c] border-b-2 border-gray-200">
+            <thead class="bg-gray-50 border-b-2 border-gray-200">
             <tr>
               <th class="w-20 p-3 text-sm font-semibold tracking-wide ">EXPEDIENTE</th>
               <th class="p-2 text-sm font-semibold tracking-wide ">NOMBRE CORTO</th>
